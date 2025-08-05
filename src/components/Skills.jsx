@@ -13,7 +13,7 @@ const skills = [
   { name: 'CSS3', icon: <DiCss3 size={50} />, level: 90 },
   { name: 'JavaScript', icon: <DiJavascript size={50} />, level: 90 },
   { name: 'Redux', icon: <SiRedux size={50} />, level: 40 },
-  { name: 'Material UI', icon: <SiMui size={50} />, level: 60 },
+  { name: 'Material UI', icon: <SiMui size={50} />, level: 50 },
 ];
 
 const Skills = () => {
