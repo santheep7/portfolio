@@ -1,17 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { Container, Typography, Box, TextField, Button, Grid, Alert } from '@mui/material';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // For scroll animations
+import {
+  Container,
+  Typography,
+  Box,
+  TextField,
+  Button,
+  Grid,
+  Alert
+} from '@mui/material';
 import { FiSend } from 'react-icons/fi';
 import emailjs from 'emailjs-com';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Contact = () => {
   const contactRef = useRef();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     title: 'Portfolio Contact Form',
     message: ''
   });
+
   const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
@@ -34,7 +47,7 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -44,16 +57,31 @@ const Contact = () => {
     e.preventDefault();
     setSubmitStatus('sending');
 
-   emailjs.send(
-  process.env.REACT_APP_EMAILJS_SERVICE_ID,
-  process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-  formData,
-  process.env.REACT_APP_EMAILJS_USER_ID
-)
+    const dataToSend = {
+      ...formData,
+      time: new Date().toLocaleString()
+    };
 
+    console.log("Sending email with data:", dataToSend);
+    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("User ID:", import.meta.env.VITE_EMAILJS_USER_ID);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        dataToSend,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
       .then(() => {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '', title: 'Portfolio Contact Form' });
+        setFormData({
+          name: '',
+          email: '',
+          title: 'Portfolio Contact Form',
+          message: ''
+        });
       })
       .catch(() => {
         setSubmitStatus('error');
@@ -121,6 +149,7 @@ const Contact = () => {
                 {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
               </Button>
             </Grid>
+
             {submitStatus === 'success' && (
               <Grid item xs={12}>
                 <Alert severity="success" onClose={() => setSubmitStatus(null)}>
