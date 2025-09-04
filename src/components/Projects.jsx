@@ -22,7 +22,7 @@ const projects = [
     description: 'EcoBin is a smart e-waste pickup and recycling management system built with the MERN stack. It connects users, pickup agents, and administrators through a clean UI. Users can schedule e-waste pickups, track requests, and receive updates. Admins oversee user data, feedback (with sentiment analysis), and manage agent logistics. The platform emphasizes environmental awareness through educational content and interactive features.',
     image: '/EcoBin.png',
     tags: ['React', 'Express', 'Node.js', 'MongoDB', 'Chart.js', 'Sentiment Analysis', 'Tailwind CSS', 'GSAP'],
-    code: 'https://github.com/santheep7/E_waste.git'
+    code: 'https://github.com/santheep7/Ecobin.git'
   }
 ];
 
