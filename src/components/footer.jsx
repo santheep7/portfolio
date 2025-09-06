@@ -31,7 +31,8 @@ const Footer = () => {
       sx={{
         py: 6,
         bgcolor: 'background.paper',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:'sans-serif'
       }}
     >
       <Box sx={{ mb: 3 }}>

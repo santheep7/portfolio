@@ -54,6 +54,7 @@ const Hero = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
+        fontFamily:'sans-serif',
         pt: 8
       }}
     >

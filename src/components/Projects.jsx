@@ -49,7 +49,7 @@ const Projects = () => {
 
 
   return (
-    <Box id="projects" sx={{ py: 8 }} ref={projectsRef}>
+    <Box id="projects" sx={{ py: 8 ,fontFamily:'sans-serif'}} ref={projectsRef}>
       <Container maxWidth="lg">
         <Typography variant="h3" component="h2" align="center" gutterBottom>
           My Projects

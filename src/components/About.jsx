@@ -42,7 +42,7 @@ const About = () => {
 
 
   return (
-    <Box id="about" sx={{ py: 8, bgcolor: 'background.paper' }} ref={aboutRef}>
+    <Box id="about" sx={{ py: 8, bgcolor: 'background.paper' ,fontFamily:'sans-serif'}} ref={aboutRef}>
       <Container maxWidth="lg">
         <Typography variant="h3" component="h2" align="center" gutterBottom>
           About Me

@@ -53,7 +53,7 @@ const Skills = () => {
 }, []);
 
   return (
-    <Box id="skills" sx={{ py: 8, bgcolor: 'background.default' }} ref={skillsRef}>
+    <Box id="skills" sx={{ py: 8, bgcolor: 'background.default',fontFamily:'sans-serif' }} ref={skillsRef}>
       <Container maxWidth="lg">
         <Typography variant="h3" component="h2" align="center" gutterBottom>
           My Skills

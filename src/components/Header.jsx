@@ -33,6 +33,7 @@ const Header = ({ darkMode, toggleTheme }) => {
       sx={{
         bgcolor: trigger ? 'background.paper' : 'transparent',
         color: 'text.primary',
+        fontFamily:'sans-serif',
         transition: 'all 0.3s ease',
         backdropFilter: trigger ? 'blur(10px)' : 'none',
         py: 1

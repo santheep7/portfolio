@@ -89,7 +89,7 @@ const Contact = () => {
   };
 
   return (
-    <Box id="contact" sx={{ py: 8, bgcolor: 'background.default' }} ref={contactRef}>
+    <Box id="contact" sx={{ py: 8, bgcolor: 'background.default',fontFamily:'sans-serif' }} ref={contactRef}>
       <Container maxWidth="md">
         <Typography variant="h3" component="h2" align="center" gutterBottom>
           Get In Touch
