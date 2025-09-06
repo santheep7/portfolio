@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Container, Typography, Button, Box } from '@mui/material';
-import profilepic from '../assets/pic1.jpg';
+import profilepic from '../assets/portfolio.jpg';
 
 const Hero = () => {
   const heroRef = useRef();
