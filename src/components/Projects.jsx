@@ -9,7 +9,7 @@ const projects = [
     image: '/BikeBuddie.png',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'NLP', 'JWT', 'otp-login', 'material-ui', 'Bootstrap'],
     code: 'https://github.com/santheep7/BikeBuddie.git',
-    Demo:'#'
+    Demo:'https://bikebuddie-1.onrender.com/'
   },
   {
     title: 'ShopinGo',
