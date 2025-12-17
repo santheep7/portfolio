@@ -5,6 +5,10 @@ import { gsap } from 'gsap';
 import { Container, Typography, Button, Box, Chip } from '@mui/material';
 import { Download, GitHub, LinkedIn, Mail } from '@mui/icons-material';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+// Dynamically import 3D component to avoid SSR issues
+const FloatingShapes = dynamic(() => import('./FloatingShapes'), { ssr: false });
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -72,6 +76,9 @@ const Hero = () => {
         }
       }}
     >
+      {/* 3D Floating Shapes Background */}
+      <FloatingShapes />
+      
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: 4 }}>
           <Box ref={textRef} sx={{ flex: 1, color: 'white' }}>

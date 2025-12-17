@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   keywords: 'Full Stack Developer, MERN Stack, React, Node.js, MongoDB, Express, JavaScript, TypeScript, Next.js',
   authors: [{ name: 'Santheep Krishna V G' }],
   icons: {
-    icon: '/icon.gif',
-    shortcut: '/icon.gif',
-    apple: '/icon.gif',
+    icon: '/developer.gif',
+    shortcut: '/developer.gif',
+    apple: '/developer.gif',
   },
   openGraph: {
     title: 'Santheep Krishna V G - Full Stack Developer',
@@ -29,6 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/developer.gif" type="image/gif" />
+        <link rel="shortcut icon" href="/developer.gif" type="image/gif" />
+      </head>
       <body className={inter.className}>
         <CustomThemeProvider>
           {children}

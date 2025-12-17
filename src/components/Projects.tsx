@@ -7,6 +7,10 @@ import { Container, Typography, Box, Card, CardContent, Button, Chip } from '@mu
 import { GitHub, Launch } from '@mui/icons-material';
 import Image from 'next/image';
 import { projects, getTechColor } from '@/lib/projects';
+import dynamic from 'next/dynamic';
+
+// Dynamically import 3D component to avoid SSR issues
+const Project3DShowcase = dynamic(() => import('./Project3D'), { ssr: false });
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -115,6 +119,17 @@ const Projects = () => {
           <Typography variant="h6" sx={{ color: 'text.secondary', maxWidth: '600px', mx: 'auto' }}>
             A showcase of my MERN stack projects with GSAP animations
           </Typography>
+        </Box>
+
+        {/* 3D Projects Showcase */}
+        <Box sx={{ mb: 8 }}>
+          <Project3DShowcase 
+            projects={projects.map((project, index) => ({
+              title: project.title,
+              color: ['#667eea', '#FF6B6B', '#FFD700'][index] || '#667eea',
+              onClick: () => window.open(project.liveLink, '_blank')
+            }))}
+          />
         </Box>
 
         {/* Projects Grid */}

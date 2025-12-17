@@ -37,13 +37,13 @@ const Footer = () => {
     {
       icon: <LinkedIn />,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/santheepkrishna',
+      href: 'https://www.linkedin.com/in/santheep-krishna-95a573276/',
       color: '#0077B5'
     },
     {
       icon: <Email />,
       label: 'Email',
-      href: 'mailto:santheepkrishna@gmail.com',
+      href: 'mailto:santheepkrishna09@gmail.com',
       color: '#EA4335'
     }
   ];
