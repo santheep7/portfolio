@@ -117,16 +117,50 @@ const Hero = () => {
                 Hello, I&apos;m
               </Typography>
               
-              <Box sx={{ mb: 2, position: 'relative', overflow: 'visible' }}>
+              <Box sx={{ mb: 2, position: 'relative', overflow: 'visible', width: 'fit-content' }}>
+                {/* Floating particles effect */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: '-20px',
+                    left: '-20px',
+                    right: '-20px',
+                    bottom: '-20px',
+                    pointerEvents: 'none',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '10%',
+                      left: '10%',
+                      width: '4px',
+                      height: '4px',
+                      background: 'rgba(255, 255, 255, 0.8)',
+                      borderRadius: '50%',
+                      animation: 'float-particle-1 4s ease-in-out infinite'
+                    },
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '70%',
+                      right: '15%',
+                      width: '3px',
+                      height: '3px',
+                      background: 'rgba(255, 107, 107, 0.8)',
+                      borderRadius: '50%',
+                      animation: 'float-particle-2 3s ease-in-out infinite reverse'
+                    }
+                  }}
+                />
+                
                 <Typography 
                   variant="h1" 
                   component="h1" 
                   className="aceternity-text-animate"
                   sx={{ 
-                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                    fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
                     fontWeight: 900,
                     lineHeight: 1,
-                    whiteSpace: 'nowrap',
+                    whiteSpace: { xs: 'normal', sm: 'nowrap' },
                     position: 'relative',
                     display: 'inline-block',
                     cursor: 'pointer',
