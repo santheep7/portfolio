@@ -48,24 +48,49 @@ const Hero = () => {
       }
     );
 
-    // Add elastic hover effect to name
-    const nameElement = document.querySelector('.elastic-name');
-    if (nameElement) {
-      nameElement.addEventListener('mouseenter', () => {
-        gsap.to(nameElement, {
-          scale: 1.05,
-          rotation: 2,
-          duration: 0.3,
-          ease: 'back.out(1.7)'
-        });
-      });
-
-      nameElement.addEventListener('mouseleave', () => {
-        gsap.to(nameElement, {
+    // Enhanced letter animations with GSAP
+    const letters = document.querySelectorAll('.letter-animate');
+    if (letters.length > 0) {
+      // Initial letter reveal animation
+      gsap.fromTo(letters, 
+        { 
+          opacity: 0, 
+          y: 50, 
+          rotationX: -90,
+          scale: 0.5
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
           scale: 1,
-          rotation: 0,
-          duration: 0.4,
-          ease: 'elastic.out(1, 0.5)'
+          duration: 0.8,
+          stagger: 0.05,
+          ease: 'back.out(1.7)',
+          delay: 1
+        }
+      );
+
+      // Individual letter hover effects
+      letters.forEach((letter, index) => {
+        letter.addEventListener('mouseenter', () => {
+          gsap.to(letter, {
+            scale: 1.2,
+            y: -10,
+            rotationY: 15,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        letter.addEventListener('mouseleave', () => {
+          gsap.to(letter, {
+            scale: 1,
+            y: 0,
+            rotationY: 0,
+            duration: 0.4,
+            ease: 'elastic.out(1, 0.5)'
+          });
         });
       });
     }
@@ -152,11 +177,8 @@ const Hero = () => {
                   }}
                 />
                 
-                <Typography 
-                  variant="h1" 
-                  component="h1" 
-                  className="aceternity-text-animate"
-                  sx={{ 
+                <Box
+                  sx={{
                     fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
                     fontWeight: 900,
                     lineHeight: 1,
@@ -164,53 +186,66 @@ const Hero = () => {
                     position: 'relative',
                     display: 'inline-block',
                     cursor: 'pointer',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%)',
-                    backgroundSize: '400% 100%',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    animation: 'aceternity-shine 3s ease-in-out infinite',
                     letterSpacing: '0.02em',
-                    textShadow: '0 0 30px rgba(255, 255, 255, 0.5)',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)',
-                      backgroundSize: '200% 100%',
-                      animation: 'aceternity-sweep 4s ease-in-out infinite',
-                      mixBlendMode: 'overlay',
-                      pointerEvents: 'none'
-                    },
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      top: '-10px',
-                      left: '-10px',
-                      right: '-10px',
-                      bottom: '-10px',
-                      background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.3), transparent, rgba(238, 90, 36, 0.3))',
-                      borderRadius: '12px',
-                      opacity: 0,
-                      transition: 'opacity 0.6s ease',
-                      filter: 'blur(20px)',
-                      zIndex: -1,
-                      pointerEvents: 'none'
-                    },
-                    '&:hover': {
-                      transform: 'scale(1.02)',
-                      transition: 'transform 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
-                      '&::after': {
-                        opacity: 1
-                      }
+                    '&:hover .letter-animate': {
+                      animation: 'letter-glow 0.6s ease-in-out'
                     }
                   }}
                 >
-                  SANTHEEP KRISHNA V G
-                </Typography>
+                  {'SANTHEEP KRISHNA V G'.split('').map((letter, index) => (
+                    <Typography
+                      key={index}
+                      component="span"
+                      className="letter-animate"
+                      sx={{
+                        display: 'inline-block',
+                        background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%)',
+                        backgroundSize: '400% 100%',
+                        backgroundClip: 'text',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        animation: `letter-reveal 0.8s ease-out ${index * 0.05}s both, aceternity-shine 3s ease-in-out infinite ${index * 0.1}s`,
+                        textShadow: '0 0 30px rgba(255, 255, 255, 0.5)',
+                        position: 'relative',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)',
+                          backgroundSize: '200% 100%',
+                          animation: `aceternity-sweep 4s ease-in-out infinite ${index * 0.05}s`,
+                          mixBlendMode: 'overlay',
+                          pointerEvents: 'none'
+                        },
+                        '&:hover': {
+                          transform: 'scale(1.1) translateY(-5px)',
+                          transition: 'all 0.3s cubic-bezier(0.23, 1, 0.320, 1)',
+                          textShadow: '0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 107, 107, 0.4)'
+                        }
+                      }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </Typography>
+                  ))}
+                  
+                  {/* Cursor effect */}
+                  <Box
+                    className="typing-cursor"
+                    sx={{
+                      display: 'inline-block',
+                      width: '3px',
+                      height: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                      backgroundColor: '#ff6b6b',
+                      marginLeft: '4px',
+                      animation: 'cursor-blink 1s infinite, cursor-fade 0.5s ease-in-out 4s forwards',
+                      borderRadius: '2px',
+                      boxShadow: '0 0 10px rgba(255, 107, 107, 0.8)'
+                    }}
+                  />
+                </Box>
               </Box>
               
               <Typography 
