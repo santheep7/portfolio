@@ -100,7 +100,7 @@ const Hero = () => {
           
           {/* Text Content */}
           <ScrollReveal direction="left" duration={1.2}>
-            <Box ref={textRef} sx={{ flex: 1, color: 'white' }}>
+            <Box ref={textRef} sx={{ flex: 1, color: 'white', overflow: 'visible' }}>
               {/* Status Badge */}
               <Chip 
                 label="🎓 Fresh Graduate • Open to Opportunities" 
