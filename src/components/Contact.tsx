@@ -125,8 +125,8 @@ const Contact = () => {
     {
       icon: <Email />,
       title: 'Email',
-      value: 'santheepkrishna@gmail.com',
-      link: 'mailto:santheepkrishna@gmail.com'
+      value: 'santheepkrishna09@gmail.com',
+      link: 'mailto:santheepkrishna09@gmail.com'
     },
     {
       icon: <Phone />,
@@ -144,7 +144,7 @@ const Contact = () => {
       icon: <LinkedIn />,
       title: 'LinkedIn',
       value: 'linkedin.com/in/santheepkrishna',
-      link: 'https://linkedin.com/in/santheepkrishna'
+      link: 'https://www.linkedin.com/in/santheep-krishna-95a573276/'
     }
   ];
 
@@ -259,7 +259,7 @@ const Contact = () => {
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Button
                   startIcon={<GitHub />}
-                  href="https://github.com/santheepkrishna"
+                  href="https://github.com/santheep7"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
@@ -276,7 +276,7 @@ const Contact = () => {
                 </Button>
                 <Button
                   startIcon={<LinkedIn />}
-                  href="https://linkedin.com/in/santheepkrishna"
+                  href="https://www.linkedin.com/in/santheep-krishna-95a573276/"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
