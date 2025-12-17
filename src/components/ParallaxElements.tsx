@@ -40,7 +40,7 @@ export default function ParallaxElements() {
         left: 0,
         width: '100%',
         height: '100%',
-        zIndex: -1,
+        zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden'
       }}
@@ -54,10 +54,12 @@ export default function ParallaxElements() {
           right: '10%',
           width: '100px',
           height: '100px',
-          background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 36, 0.1))',
+          background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.3), rgba(238, 90, 36, 0.2))',
           borderRadius: '20px',
           transform: 'rotate(45deg)',
-          animation: 'float 6s ease-in-out infinite'
+          animation: 'float 6s ease-in-out infinite',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 107, 107, 0.2)'
         }}
       />
       
@@ -69,9 +71,11 @@ export default function ParallaxElements() {
           left: '5%',
           width: '80px',
           height: '80px',
-          background: 'linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+          background: 'linear-gradient(45deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.2))',
           borderRadius: '50%',
-          animation: 'float 8s ease-in-out infinite reverse'
+          animation: 'float 8s ease-in-out infinite reverse',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(102, 126, 234, 0.2)'
         }}
       />
       
@@ -83,9 +87,10 @@ export default function ParallaxElements() {
           left: '80%',
           width: '60px',
           height: '60px',
-          background: 'linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1))',
+          background: 'linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.2))',
           clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-          animation: 'float 10s ease-in-out infinite'
+          animation: 'float 10s ease-in-out infinite',
+          backdropFilter: 'blur(10px)'
         }}
       />
       
@@ -97,10 +102,42 @@ export default function ParallaxElements() {
           right: '20%',
           width: '120px',
           height: '120px',
-          background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.05), rgba(238, 90, 36, 0.05))',
+          background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(238, 90, 36, 0.1))',
           borderRadius: '30px',
           transform: 'rotate(30deg)',
-          animation: 'float 7s ease-in-out infinite'
+          animation: 'float 7s ease-in-out infinite',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 107, 107, 0.15)'
+        }}
+      />
+      
+      {/* Additional smaller elements */}
+      <Box
+        className="parallax-element"
+        sx={{
+          position: 'absolute',
+          top: '25%',
+          left: '15%',
+          width: '40px',
+          height: '40px',
+          background: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: '50%',
+          animation: 'float 12s ease-in-out infinite',
+          backdropFilter: 'blur(5px)'
+        }}
+      />
+      
+      <Box
+        className="parallax-element"
+        sx={{
+          position: 'absolute',
+          top: '70%',
+          right: '60%',
+          width: '30px',
+          height: '30px',
+          background: 'rgba(255, 215, 0, 0.2)',
+          transform: 'rotate(45deg)',
+          animation: 'float 9s ease-in-out infinite reverse'
         }}
       />
     </Box>

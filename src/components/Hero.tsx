@@ -47,6 +47,28 @@ const Hero = () => {
         stagger: 0.2
       }
     );
+
+    // Add elastic hover effect to name
+    const nameElement = document.querySelector('.elastic-name');
+    if (nameElement) {
+      nameElement.addEventListener('mouseenter', () => {
+        gsap.to(nameElement, {
+          scale: 1.05,
+          rotation: 2,
+          duration: 0.3,
+          ease: 'back.out(1.7)'
+        });
+      });
+
+      nameElement.addEventListener('mouseleave', () => {
+        gsap.to(nameElement, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.4,
+          ease: 'elastic.out(1, 0.5)'
+        });
+      });
+    }
   }, []);
 
   return (
@@ -73,7 +95,7 @@ const Hero = () => {
         }
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 10 }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: 4 }}>
           
           {/* Text Content */}
@@ -95,29 +117,67 @@ const Hero = () => {
                 Hello, I&apos;m
               </Typography>
               
-              <Typography 
-                variant="h1" 
-                component="h1" 
-                sx={{ 
-                  mb: 2,
-                  fontSize: { xs: '2.5rem', md: '3.5rem' },
-                  fontWeight: 800,
-                  lineHeight: 1.1
-                }}
-              >
-                <span 
-                  className="shining-name"
-                  style={{ 
-                    background: 'linear-gradient(90deg, #ffffff, #f0f0f0, #ffffff)',
+              <Box sx={{ mb: 2, position: 'relative', overflow: 'visible' }}>
+                <Typography 
+                  variant="h1" 
+                  component="h1" 
+                  className="aceternity-text-animate"
+                  sx={{ 
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                    fontWeight: 900,
+                    lineHeight: 1,
+                    whiteSpace: 'nowrap',
+                    position: 'relative',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%)',
+                    backgroundSize: '400% 100%',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    backgroundSize: '200% 100%'
+                    animation: 'aceternity-shine 3s ease-in-out infinite',
+                    letterSpacing: '0.02em',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.5)',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)',
+                      backgroundSize: '200% 100%',
+                      animation: 'aceternity-sweep 4s ease-in-out infinite',
+                      mixBlendMode: 'overlay',
+                      pointerEvents: 'none'
+                    },
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '-10px',
+                      left: '-10px',
+                      right: '-10px',
+                      bottom: '-10px',
+                      background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.3), transparent, rgba(238, 90, 36, 0.3))',
+                      borderRadius: '12px',
+                      opacity: 0,
+                      transition: 'opacity 0.6s ease',
+                      filter: 'blur(20px)',
+                      zIndex: -1,
+                      pointerEvents: 'none'
+                    },
+                    '&:hover': {
+                      transform: 'scale(1.02)',
+                      transition: 'transform 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
+                      '&::after': {
+                        opacity: 1
+                      }
+                    }
                   }}
                 >
                   SANTHEEP KRISHNA V G
-                </span>
-              </Typography>
+                </Typography>
+              </Box>
               
               <Typography 
                 variant="h4" 

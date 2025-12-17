@@ -110,6 +110,37 @@ img {
   animation: shine 2.5s ease-in-out infinite;
 }
 
+/* Elastic Name Animation */
+.elastic-name {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.elastic-name:hover {
+  transform: scale(1.05);
+  animation: elastic 0.6s ease-out;
+}
+
+@keyframes elastic {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1) rotate(-1deg);
+  }
+  40% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  60% {
+    transform: scale(1.08) rotate(-0.5deg);
+  }
+  80% {
+    transform: scale(1.03) rotate(0.5deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(0deg);
+  }
+}
+
 /* Precise shine sweep effect */
 .shining-name::after {
   content: '';
@@ -158,16 +189,7 @@ img {
   }
 }
 
-/* Smooth cursor */
-* {
-  cursor: none;
-}
 
-@media (max-width: 768px) {
-  * {
-    cursor: auto;
-  }
-}
 
 /* Smooth page transitions */
 .page-transition {
@@ -256,4 +278,261 @@ img {
 
 .project-card:hover::before {
   opacity: 1;
+}
+
+/* 3D Stacked Cards Styles */
+.stacked-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.stacked-card:hover {
+  transform: translateZ(50px) rotateY(5deg) scale(1.05);
+}
+
+/* Smooth 3D transitions */
+.card-3d {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Enhanced depth perception */
+.depth-shadow {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24),
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.depth-shadow:hover {
+  box-shadow: 
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22),
+    0 20px 40px rgba(255, 107, 107, 0.2);
+}
+
+/* Aceternity UI Style Animations */
+.aceternity-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+  position: relative;
+}
+
+.aceternity-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1) 0%,
+    transparent 50%,
+    rgba(238, 90, 36, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.aceternity-card:hover::after {
+  opacity: 1;
+}
+
+/* Enhanced 3D card tilt effect */
+.aceternity-card:hover {
+  animation: cardFloat 0.6s ease-out forwards;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0) rotateX(0) rotateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg) scale(1.01);
+  }
+  100% {
+    transform: translateY(-25px) rotateX(10deg) rotateY(10deg) scale(1.03);
+  }
+}
+
+/* Smooth shimmer effect for buttons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.aceternity-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.aceternity-button:hover::after {
+  left: 100%;
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Magnetic hover effect */
+.magnetic-hover {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.magnetic-hover:hover {
+  transform: translate3d(0, -8px, 0) scale(1.02);
+}
+
+/* Glow effect on hover */
+.glow-on-hover {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff6b6b);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.glow-on-hover:hover::before {
+  opacity: 0.7;
+}
+
+/* Aceternity UI Text Animations */
+@keyframes aceternity-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes aceternity-sweep {
+  0% {
+    background-position: -200% 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    background-position: 200% 0;
+    opacity: 0;
+  }
+}
+
+.aceternity-text-animate {
+  position: relative;
+  overflow: visible;
+}
+
+/* Enhanced text glow effect */
+@keyframes text-glow-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4),
+      0 0 40px rgba(255, 107, 107, 0.3);
+  }
+}
+
+.aceternity-text-animate:hover {
+  animation: 
+    aceternity-shine 3s ease-in-out infinite,
+    text-glow-pulse 2s ease-in-out infinite;
+}
+
+/* Responsive text sizing */
+@media (max-width: 600px) {
+  .aceternity-text-animate {
+    font-size: 1.8rem !important;
+    letter-spacing: 0.01em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .aceternity-text-animate {
+    font-size: 1.5rem !important;
+    white-space: normal !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Holographic effect */
+@keyframes holographic {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.aceternity-text-animate::before {
+  animation: aceternity-sweep 4s ease-in-out infinite;
+}
+
+/* Particle effect simulation */
+.aceternity-text-animate::after {
+  animation: holographic 8s linear infinite;
 }
