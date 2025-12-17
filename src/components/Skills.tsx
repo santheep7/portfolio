@@ -7,10 +7,6 @@ import { Container, Typography, Box, Card, CardContent, Chip, LinearProgress } f
 import { DiMongodb, DiNodejs, DiReact, DiHtml5, DiCss3, DiJavascript } from 'react-icons/di';
 import { SiExpress, SiRedux, SiMui, SiTypescript, SiGithub } from 'react-icons/si';
 import { Build } from '@mui/icons-material';
-import dynamic from 'next/dynamic';
-
-// Dynamically import 3D component to avoid SSR issues
-const TechCube = dynamic(() => import('./TechCube'), { ssr: false });
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -119,11 +115,6 @@ const Skills = () => {
           <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '600px', mx: 'auto' }}>
             Proficient in modern web technologies with a focus on performance and scalability
           </Typography>
-        </Box>
-
-        {/* 3D Tech Cube */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 8 }}>
-          <TechCube />
         </Box>
 
         {/* Skills Categories */}
