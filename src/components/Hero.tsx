@@ -238,6 +238,7 @@ const Hero = () => {
               <Button
                 className="hero-button"
                 startIcon={<LinkedIn />}
+                href="https://www.linkedin.com/in/santheep-krishna-95a573276/"
                 sx={{
                   minWidth: 'auto',
                   p: 1.5,

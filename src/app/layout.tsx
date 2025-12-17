@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description: 'Portfolio of Santheep Krishna V G, a passionate MERN Stack Developer specializing in modern web applications.',
   keywords: 'Full Stack Developer, MERN Stack, React, Node.js, MongoDB, Express, JavaScript, TypeScript, Next.js',
   authors: [{ name: 'Santheep Krishna V G' }],
+  icons: {
+    icon: '/icon.gif',
+    shortcut: '/icon.gif',
+    apple: '/icon.gif',
+  },
   openGraph: {
     title: 'Santheep Krishna V G - Full Stack Developer',
     description: 'Portfolio of Santheep Krishna V G, a passionate MERN Stack Developer',
