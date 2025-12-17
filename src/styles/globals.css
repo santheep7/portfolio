@@ -705,3 +705,32 @@ img {
     }
   }
 }
+
+/* Enhanced large text styling */
+.letter-animate {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Better spacing for large text */
+@media (min-width: 1024px) {
+  .letter-animate {
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Improved mobile responsiveness for large text */
+@media (max-width: 640px) {
+  .letter-animate {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-animate {
+    font-size: 1.8rem !important;
+  }
+}

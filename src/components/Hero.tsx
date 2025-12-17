@@ -72,7 +72,7 @@ const Hero = () => {
       );
 
       // Individual letter hover effects
-      letters.forEach((letter, index) => {
+      letters.forEach((letter) => {
         letter.addEventListener('mouseenter', () => {
           gsap.to(letter, {
             scale: 1.2,
@@ -179,7 +179,7 @@ const Hero = () => {
                 
                 <Box
                   sx={{
-                    fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                    fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
                     fontWeight: 900,
                     lineHeight: 1,
                     whiteSpace: { xs: 'normal', sm: 'nowrap' },
@@ -236,13 +236,13 @@ const Hero = () => {
                     className="typing-cursor"
                     sx={{
                       display: 'inline-block',
-                      width: '3px',
-                      height: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                      width: '4px',
+                      height: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
                       backgroundColor: '#ff6b6b',
-                      marginLeft: '4px',
+                      marginLeft: '6px',
                       animation: 'cursor-blink 1s infinite, cursor-fade 0.5s ease-in-out 4s forwards',
                       borderRadius: '2px',
-                      boxShadow: '0 0 10px rgba(255, 107, 107, 0.8)'
+                      boxShadow: '0 0 15px rgba(255, 107, 107, 0.8)'
                     }}
                   />
                 </Box>
