@@ -722,15 +722,39 @@ img {
   }
 }
 
-/* Improved mobile responsiveness for large text */
+/* Improved mobile responsiveness for smaller text */
 @media (max-width: 640px) {
   .letter-animate {
-    font-size: 2rem !important;
+    font-size: 1.6rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .letter-animate {
-    font-size: 1.8rem !important;
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1536px) {
+  .letter-animate {
+    font-size: 4.2rem !important;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Enhanced text shadow for larger sizes */
+.letter-animate {
+  text-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.5),
+    0 0 60px rgba(255, 255, 255, 0.3),
+    0 0 90px rgba(255, 107, 107, 0.2);
+}
+
+/* Better spacing and positioning for very large text */
+@media (min-width: 1024px) {
+  .letter-animate {
+    letter-spacing: 0.03em;
+    line-height: 0.85;
   }
 }

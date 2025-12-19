@@ -142,7 +142,7 @@ const Hero = () => {
                 Hello, I&apos;m
               </Typography>
               
-              <Box sx={{ mb: 2, position: 'relative', overflow: 'visible', width: 'fit-content' }}>
+              <Box sx={{ mb: 3, position: 'relative', overflow: 'visible', width: 'fit-content', maxWidth: '100%' }}>
                 {/* Floating particles effect */}
                 <Box
                   sx={{
@@ -179,9 +179,9 @@ const Hero = () => {
                 
                 <Box
                   sx={{
-                    fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
-                    fontWeight: 900,
-                    lineHeight: 1,
+                    fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
+                    fontWeight: 800,
+                    lineHeight: 1.1,
                     whiteSpace: { xs: 'normal', sm: 'nowrap' },
                     position: 'relative',
                     display: 'inline-block',
@@ -236,13 +236,13 @@ const Hero = () => {
                     className="typing-cursor"
                     sx={{
                       display: 'inline-block',
-                      width: '4px',
-                      height: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
+                      width: '3px',
+                      height: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
                       backgroundColor: '#ff6b6b',
-                      marginLeft: '6px',
+                      marginLeft: '4px',
                       animation: 'cursor-blink 1s infinite, cursor-fade 0.5s ease-in-out 4s forwards',
                       borderRadius: '2px',
-                      boxShadow: '0 0 15px rgba(255, 107, 107, 0.8)'
+                      boxShadow: '0 0 10px rgba(255, 107, 107, 0.8)'
                     }}
                   />
                 </Box>
@@ -327,6 +327,11 @@ const Hero = () => {
                   size="large"
                   className="hero-button"
                   startIcon={<Download />}
+                  component="a"
+                  href="/Santheep_Krishna_CV.pdf"
+                  download="Santheep_Krishna_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
                     px: 4,
                     py: 1.5,

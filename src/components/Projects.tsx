@@ -123,6 +123,7 @@ const Projects = () => {
                 {/* Project Image */}
                 <CardItem
                   translateZ="50"
+                  as="div"
                   className="text-xl font-bold text-neutral-600 dark:text-white mb-2"
                 >
                   <Typography 
@@ -139,12 +140,13 @@ const Projects = () => {
                 </CardItem>
 
                 <CardItem
-                  as="p"
+                  as="div"
                   translateZ="60"
                   className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 mb-4"
                 >
                   <Typography 
-                    variant="body2" 
+                    variant="body2"
+                    component="div"
                     sx={{ 
                       color: 'rgba(255, 255, 255, 0.7)', 
                       lineHeight: 1.6,
@@ -155,7 +157,7 @@ const Projects = () => {
                   </Typography>
                 </CardItem>
 
-                <CardItem translateZ="100" className="w-full mt-4">
+                <CardItem translateZ="100" as="div" className="w-full mt-4">
                   <Box sx={{ 
                     position: 'relative', 
                     height: '200px', 
@@ -203,7 +205,7 @@ const Projects = () => {
                 </CardItem>
 
                 {/* Technologies */}
-                <CardItem translateZ="80" className="mt-4 mb-4">
+                <CardItem translateZ="80" as="div" className="mt-4 mb-4">
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Chip
