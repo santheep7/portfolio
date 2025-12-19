@@ -13,9 +13,9 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'BikeBuddie',
-    description: 'A bike rental platform built with MERN stack as a learning project. Features include user authentication, bike listing, booking system, and smooth animations using GSAP for enhanced user experience.',
+    description: 'A comprehensive bike rental platform built with MERN stack as a learning project. Features include user authentication with JWT, bike listing with search filters, booking system with payment integration, real-time notifications, and smooth animations using GSAP for enhanced user experience.',
     image: '/BikeBuddie.png',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'GSAP'],
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'GSAP', 'Material-UI', 'Tailwind CSS', 'Mongoose', 'Bcrypt', 'Axios', 'React Router'],
     githubLink: 'https://github.com/santheep7/BikeBuddie',
     liveLink: 'https://bike-buddie.vercel.app/',
     category: 'MERN Stack'
@@ -23,9 +23,9 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'EcoBin',
-    description: 'A waste management awareness web application built with MERN stack. Features include educational content, waste tracking, tips for sustainable living, and interactive animations powered by GSAP.',
+    description: 'A waste management awareness web application built with MERN stack. Features include educational content, waste tracking dashboard, tips for sustainable living, user progress tracking, community features, and interactive animations powered by GSAP.',
     image: '/EcoBin.png',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'GSAP'],
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'GSAP', 'Bootstrap', 'Mongoose', 'Bcrypt', 'Multer', 'Cloudinary', 'React Hooks'],
     githubLink: 'https://github.com/santheep7/Ecobin',
     liveLink: 'https://ecobin-xi.vercel.app/',
     category: 'MERN Stack'
@@ -33,9 +33,9 @@ export const projects: Project[] = [
   {
     id: 3,
     title: 'ShopinGo',
-    description: 'An e-commerce web application built with MERN stack as a learning project. Includes product catalog, shopping cart, user authentication, and engaging animations using GSAP for smooth transitions.',
+    description: 'An e-commerce web application built with MERN stack as a learning project. Includes product catalog with categories, shopping cart with local storage, user authentication, order management, admin panel, payment gateway integration, and engaging animations using GSAP for smooth transitions.',
     image: '/ShopinGo.png',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'GSAP'],
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'GSAP', 'Material-UI', 'Redux', 'Mongoose', 'Bcrypt', 'Stripe', 'Nodemailer'],
     githubLink: 'https://github.com/santheep7/ShopinGo',
     liveLink: 'https://shopin-go.vercel.app/',
     category: 'MERN Stack'

@@ -105,7 +105,7 @@ const Hero = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'var(--bg-primary)',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -125,7 +125,7 @@ const Hero = () => {
           
           {/* Text Content */}
           <ScrollReveal direction="left" duration={1.2}>
-            <Box ref={textRef} sx={{ flex: 1, color: 'white', overflow: 'visible' }}>
+            <Box ref={textRef} sx={{ flex: 1, color: 'var(--text-primary)', overflow: 'visible' }}>
               {/* Status Badge */}
               <Chip 
                 label="🎓 Fresh Graduate • Open to Opportunities" 
