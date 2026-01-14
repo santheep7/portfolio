@@ -2,52 +2,24 @@
 
 import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default function ParallaxElements() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Parallax for floating shapes - different speeds
-      gsap.to('.parallax-slow', {
-        y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-        ease: 'none',
-        scrollTrigger: {
-          start: 0,
-          end: 'max',
-          invalidateOnRefresh: true,
-          scrub: 0
-        }
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      
+      parallaxElements.forEach((element) => {
+        const speed = parseFloat(element.getAttribute('data-parallax') || '0');
+        const yPos = -(scrolled * speed);
+        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
       });
+    };
 
-      gsap.to('.parallax-medium', {
-        y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-        ease: 'none',
-        scrollTrigger: {
-          start: 0,
-          end: 'max',
-          invalidateOnRefresh: true,
-          scrub: 0
-        }
-      });
-
-      gsap.to('.parallax-fast', {
-        y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-        ease: 'none',
-        scrollTrigger: {
-          start: 0,
-          end: 'max',
-          invalidateOnRefresh: true,
-          scrub: 0
-        }
-      });
-    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -64,166 +36,219 @@ export default function ParallaxElements() {
         overflow: 'hidden'
       }}
     >
-      {/* Grid Lines - Slow Parallax */}
+      {/* Large Grid Background - Slowest */}
       <Box
-        className="parallax-slow"
-        data-speed="0.1"
+        data-parallax="0.1"
         sx={{
           position: 'absolute',
-          top: '5%',
-          left: '10%',
-          width: '200px',
-          height: '200px',
-          background: `
-            linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px)
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '200%',
+          backgroundImage: `
+            linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px)
           `,
-          backgroundSize: '20px 20px',
-          transform: 'rotate(45deg)',
-          opacity: 0.3
+          backgroundSize: '50px 50px',
+          opacity: 0.5
         }}
       />
 
-      {/* Code Snippet Effect - Medium Parallax */}
+      {/* Floating Code Block 1 */}
       <Box
-        className="parallax-medium"
-        data-speed="0.2"
+        data-parallax="0.3"
         sx={{
           position: 'absolute',
-          top: '15%',
-          right: '15%',
-          width: '180px',
+          top: '10%',
+          right: '10%',
+          width: '200px',
+          height: '150px',
+          background: 'rgba(0, 212, 255, 0.08)',
+          border: '1px solid rgba(0, 212, 255, 0.3)',
+          borderRadius: '12px',
           padding: '15px',
-          background: 'rgba(0, 212, 255, 0.05)',
-          border: '1px solid rgba(0, 212, 255, 0.2)',
-          borderRadius: '8px',
           fontFamily: 'monospace',
-          fontSize: '10px',
+          fontSize: '11px',
           color: '#00d4ff',
           backdropFilter: 'blur(10px)',
-          '&::before': {
-            content: '"const dev = { \\A  name: \\"Portfolio\\", \\A  tech: [React, Next] \\A}"',
-            whiteSpace: 'pre',
-            opacity: 0.6
-          }
-        }}
-      />
-
-      {/* Hexagon Shape - Fast Parallax */}
-      <Box
-        className="parallax-fast"
-        data-speed="0.3"
-        sx={{
-          position: 'absolute',
-          top: '40%',
-          left: '5%',
-          width: '100px',
-          height: '115px',
-          background: 'linear-gradient(135deg, rgba(123, 44, 191, 0.15), rgba(199, 125, 255, 0.05))',
-          clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-          border: '1px solid rgba(123, 44, 191, 0.3)',
-          backdropFilter: 'blur(10px)'
-        }}
-      />
-
-      {/* Circuit Pattern - Slow Parallax */}
-      <Box
-        className="parallax-slow"
-        data-speed="0.15"
-        sx={{
-          position: 'absolute',
-          top: '60%',
-          right: '8%',
-          width: '150px',
-          height: '150px',
-          background: `
-            radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.2) 2px, transparent 2px),
-            radial-gradient(circle at 80% 80%, rgba(199, 125, 255, 0.2) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(rgba(199, 125, 255, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '100% 100%, 100% 100%, 30px 30px, 30px 30px',
-          border: '1px solid rgba(0, 212, 255, 0.2)',
-          borderRadius: '10px',
-          backdropFilter: 'blur(5px)'
-        }}
-      />
-
-      {/* Binary Code Effect - Medium Parallax */}
-      <Box
-        className="parallax-medium"
-        data-speed="0.25"
-        sx={{
-          position: 'absolute',
-          top: '25%',
-          left: '70%',
-          width: '120px',
-          padding: '10px',
-          background: 'rgba(123, 44, 191, 0.05)',
-          border: '1px solid rgba(123, 44, 191, 0.2)',
-          borderRadius: '6px',
-          fontFamily: 'monospace',
-          fontSize: '8px',
-          color: '#c77dff',
-          lineHeight: 1.4,
-          backdropFilter: 'blur(10px)',
-          '&::before': {
-            content: '"01001000 01101001\\A01010100 01100101\\A01100011 01101000"',
-            whiteSpace: 'pre',
-            opacity: 0.5
-          }
-        }}
-      />
-
-      {/* Glowing Circle - Fast Parallax */}
-      <Box
-        className="parallax-fast"
-        data-speed="0.35"
-        sx={{
-          position: 'absolute',
-          top: '70%',
-          left: '20%',
-          width: '120px',
-          height: '120px',
-          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%)',
-          border: '2px solid rgba(0, 212, 255, 0.3)',
-          borderRadius: '50%',
-          backdropFilter: 'blur(8px)',
+          boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+          overflow: 'hidden',
           '&::before': {
             content: '""',
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '60%',
-            height: '60%',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '25px',
             background: 'rgba(0, 212, 255, 0.1)',
-            borderRadius: '50%',
-            border: '1px solid rgba(0, 212, 255, 0.4)'
+            borderBottom: '1px solid rgba(0, 212, 255, 0.2)'
           }
+        }}
+      >
+        <Box sx={{ position: 'relative', zIndex: 1, mt: 3 }}>
+          <Box sx={{ opacity: 0.7 }}>{'function Portfolio() {'}</Box>
+          <Box sx={{ opacity: 0.6, pl: 2 }}>{'return <App />;'}</Box>
+          <Box sx={{ opacity: 0.7 }}>{'}'}</Box>
+        </Box>
+      </Box>
+
+      {/* Hexagon Shape */}
+      <Box
+        data-parallax="0.5"
+        sx={{
+          position: 'absolute',
+          top: '30%',
+          left: '5%',
+          width: '120px',
+          height: '138px',
+          background: 'linear-gradient(135deg, rgba(123, 44, 191, 0.12), rgba(199, 125, 255, 0.08))',
+          clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+          border: '2px solid rgba(123, 44, 191, 0.3)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 8px 32px rgba(123, 44, 191, 0.15)'
         }}
       />
 
-      {/* Tech Bracket - Slow Parallax */}
+      {/* Terminal Window */}
       <Box
-        className="parallax-slow"
-        data-speed="0.12"
+        data-parallax="0.4"
         sx={{
           position: 'absolute',
-          top: '80%',
-          right: '25%',
+          top: '50%',
+          right: '15%',
+          width: '220px',
+          background: 'rgba(0, 0, 0, 0.4)',
+          border: '1px solid rgba(0, 212, 255, 0.3)',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+        }}
+      >
+        {/* Terminal Header */}
+        <Box sx={{ 
+          height: '30px', 
+          background: 'rgba(0, 212, 255, 0.1)',
+          borderBottom: '1px solid rgba(0, 212, 255, 0.2)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          px: 1.5
+        }}>
+          <Box sx={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56' }} />
+          <Box sx={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e' }} />
+          <Box sx={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f' }} />
+        </Box>
+        {/* Terminal Content */}
+        <Box sx={{ 
+          p: 2, 
+          fontFamily: 'monospace', 
+          fontSize: '11px', 
+          color: '#00d4ff',
+          lineHeight: 1.6
+        }}>
+          <Box sx={{ opacity: 0.8 }}>$ npm run dev</Box>
+          <Box sx={{ opacity: 0.6, color: '#27c93f' }}>&gt; Starting server...</Box>
+          <Box sx={{ opacity: 0.6, color: '#27c93f' }}>&gt; Ready on port 3000</Box>
+        </Box>
+      </Box>
+
+      {/* Circuit Pattern */}
+      <Box
+        data-parallax="0.25"
+        sx={{
+          position: 'absolute',
+          top: '70%',
+          left: '15%',
+          width: '180px',
+          height: '180px',
+          background: `
+            radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.3) 3px, transparent 3px),
+            radial-gradient(circle at 70% 70%, rgba(199, 125, 255, 0.3) 3px, transparent 3px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.15) 1px, transparent 1px),
+            linear-gradient(rgba(199, 125, 255, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '100% 100%, 100% 100%, 40px 40px, 40px 40px',
+          border: '1px solid rgba(0, 212, 255, 0.2)',
+          borderRadius: '12px',
+          backdropFilter: 'blur(8px)',
+          boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
+        }}
+      />
+
+      {/* Glowing Circle */}
+      <Box
+        data-parallax="0.6"
+        sx={{
+          position: 'absolute',
+          top: '20%',
+          left: '80%',
+          width: '140px',
+          height: '140px',
+          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)',
+          border: '2px solid rgba(0, 212, 255, 0.4)',
+          borderRadius: '50%',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 0 40px rgba(0, 212, 255, 0.3)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <Box sx={{
           width: '80px',
           height: '80px',
-          border: '2px solid rgba(199, 125, 255, 0.3)',
+          background: 'rgba(0, 212, 255, 0.15)',
+          borderRadius: '50%',
+          border: '1px solid rgba(0, 212, 255, 0.5)'
+        }} />
+      </Box>
+
+      {/* Binary Code Block */}
+      <Box
+        data-parallax="0.35"
+        sx={{
+          position: 'absolute',
+          top: '60%',
+          right: '5%',
+          width: '150px',
+          padding: '12px',
+          background: 'rgba(123, 44, 191, 0.08)',
+          border: '1px solid rgba(123, 44, 191, 0.3)',
           borderRadius: '8px',
-          background: 'rgba(199, 125, 255, 0.05)',
+          fontFamily: 'monospace',
+          fontSize: '9px',
+          color: '#c77dff',
+          lineHeight: 1.5,
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 8px 32px rgba(123, 44, 191, 0.1)'
+        }}
+      >
+        <Box sx={{ opacity: 0.7 }}>01001000 01101001</Box>
+        <Box sx={{ opacity: 0.6 }}>01010100 01100101</Box>
+        <Box sx={{ opacity: 0.5 }}>01100011 01101000</Box>
+        <Box sx={{ opacity: 0.4 }}>01001110 01100101</Box>
+      </Box>
+
+      {/* Code Brackets */}
+      <Box
+        data-parallax="0.45"
+        sx={{
+          position: 'absolute',
+          top: '85%',
+          left: '25%',
+          width: '100px',
+          height: '100px',
+          border: '2px solid rgba(0, 212, 255, 0.3)',
+          borderRadius: '10px',
+          background: 'rgba(0, 212, 255, 0.05)',
           backdropFilter: 'blur(10px)',
           '&::before, &::after': {
             content: '""',
             position: 'absolute',
-            width: '20px',
-            height: '20px',
-            border: '2px solid rgba(199, 125, 255, 0.5)'
+            width: '25px',
+            height: '25px',
+            border: '2px solid rgba(0, 212, 255, 0.6)'
           },
           '&::before': {
             top: -2,
@@ -240,90 +265,47 @@ export default function ParallaxElements() {
         }}
       />
 
-      {/* Floating Terminal Window - Medium Parallax */}
+      {/* Small Dots Pattern */}
       <Box
-        className="parallax-medium"
-        data-speed="0.22"
+        data-parallax="0.55"
         sx={{
           position: 'absolute',
-          top: '50%',
-          right: '40%',
-          width: '160px',
-          background: 'rgba(0, 212, 255, 0.05)',
-          border: '1px solid rgba(0, 212, 255, 0.25)',
-          borderRadius: '8px',
-          backdropFilter: 'blur(10px)',
-          overflow: 'hidden'
-        }}
-      >
-        <Box sx={{ 
-          height: '20px', 
-          background: 'rgba(0, 212, 255, 0.1)',
-          borderBottom: '1px solid rgba(0, 212, 255, 0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px',
-          px: 1
-        }}>
-          <Box sx={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ff5f56' }} />
-          <Box sx={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ffbd2e' }} />
-          <Box sx={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27c93f' }} />
-        </Box>
-        <Box sx={{ 
-          p: 1, 
-          fontFamily: 'monospace', 
-          fontSize: '9px', 
-          color: '#00d4ff',
-          opacity: 0.6
-        }}>
-          $ npm run dev<br/>
-          &gt; Ready on port 3000
-        </Box>
-      </Box>
-
-      {/* Dotted Pattern - Fast Parallax */}
-      <Box
-        className="parallax-fast"
-        data-speed="0.28"
-        sx={{
-          position: 'absolute',
-          top: '35%',
-          left: '85%',
-          width: '100px',
-          height: '100px',
+          top: '40%',
+          left: '50%',
+          width: '120px',
+          height: '120px',
           background: `
-            radial-gradient(circle, rgba(0, 212, 255, 0.3) 1px, transparent 1px)
+            radial-gradient(circle, rgba(199, 125, 255, 0.4) 2px, transparent 2px)
           `,
-          backgroundSize: '15px 15px',
-          opacity: 0.4
+          backgroundSize: '20px 20px',
+          opacity: 0.5
         }}
       />
 
-      {/* Arrow Indicator - Slow Parallax */}
+      {/* Developer Icon */}
       <Box
-        className="parallax-slow"
-        data-speed="0.18"
+        data-parallax="0.2"
         sx={{
           position: 'absolute',
-          top: '90%',
-          left: '50%',
-          width: '60px',
-          height: '60px',
-          border: '2px solid rgba(0, 212, 255, 0.3)',
+          top: '75%',
+          right: '35%',
+          width: '80px',
+          height: '80px',
+          border: '2px solid rgba(199, 125, 255, 0.4)',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'rgba(0, 212, 255, 0.05)',
+          background: 'rgba(199, 125, 255, 0.08)',
           backdropFilter: 'blur(10px)',
-          '&::before': {
-            content: '"⟨/⟩"',
-            fontSize: '24px',
-            color: '#00d4ff',
-            opacity: 0.6
-          }
+          fontSize: '32px',
+          color: '#c77dff',
+          fontFamily: 'monospace',
+          boxShadow: '0 8px 32px rgba(199, 125, 255, 0.15)'
         }}
-      />
+      >
+        {'</>'}
+      </Box>
     </Box>
   );
 }
