@@ -73,6 +73,21 @@ const Skills = () => {
           },
         }
       );
+
+      // Parallax effect for skill cards
+      const skillCards = document.querySelectorAll('.skill-item');
+      skillCards.forEach((card, index) => {
+        gsap.to(card, {
+          yPercent: -15 * (index % 3 + 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: skillsRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      });
     }
   }, []);
 
@@ -82,7 +97,7 @@ const Skills = () => {
       id="skills" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
         color: 'white',
         position: 'relative'
       }} 
@@ -95,11 +110,11 @@ const Skills = () => {
             label="Skills & Technologies" 
             sx={{ 
               mb: 2, 
-              backgroundColor: 'rgba(255,255,255,0.2)', 
-              color: 'white',
+              backgroundColor: 'rgba(0, 212, 255, 0.15)', 
+              color: '#00d4ff',
               fontWeight: 600,
               px: 2,
-              backdropFilter: 'blur(10px)'
+              border: '1px solid rgba(0, 212, 255, 0.3)'
             }} 
           />
           <Typography 
@@ -108,7 +123,10 @@ const Skills = () => {
             sx={{ 
               fontWeight: 800,
               mb: 2,
-              color: 'white'
+              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}
           >
             Technical Expertise
@@ -129,14 +147,16 @@ const Skills = () => {
               <Card 
                 className="skill-item"
                 sx={{ 
-                  background: 'rgba(255,255,255,0.1)',
+                  background: 'rgba(0, 212, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
+                  border: '1px solid rgba(0, 212, 255, 0.2)',
                   borderRadius: '16px',
                   height: '100%',
+                  transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+                    boxShadow: '0 10px 30px rgba(0, 212, 255, 0.2)',
+                    borderColor: 'rgba(0, 212, 255, 0.4)'
                   }
                 }}
               >

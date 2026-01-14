@@ -48,6 +48,30 @@ const About = () => {
           },
         }
       );
+
+      // Parallax effect for text content
+      gsap.to(textRef.current, {
+        yPercent: -10,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      // Parallax effect for image
+      gsap.to(imageRef.current, {
+        yPercent: -15,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
     }
   }, []);
 
@@ -57,7 +81,7 @@ const About = () => {
       id="about" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%)',
+        background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 100%)',
         position: 'relative'
       }} 
       ref={aboutRef}
@@ -69,10 +93,11 @@ const About = () => {
             label="About Me" 
             sx={{ 
               mb: 2, 
-              backgroundColor: '#667eea', 
-              color: 'white',
+              backgroundColor: 'rgba(123, 44, 191, 0.15)', 
+              color: '#c77dff',
               fontWeight: 600,
-              px: 2
+              px: 2,
+              border: '1px solid rgba(123, 44, 191, 0.3)'
             }} 
           />
           <Typography 
@@ -80,7 +105,10 @@ const About = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              color: 'white',
+              background: 'linear-gradient(90deg, #c77dff, #00d4ff)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
               mb: 2
             }}
           >
@@ -131,7 +159,7 @@ const About = () => {
                 mb: 4 
               }}>
                 <Box sx={{ textAlign: 'center' }}>
-                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#667eea' }}>
+                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#00d4ff' }}>
                     6+
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -139,7 +167,7 @@ const About = () => {
                   </Typography>
                 </Box>
                 <Box sx={{ textAlign: 'center' }}>
-                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#667eea' }}>
+                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#00d4ff' }}>
                     6+
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -166,16 +194,18 @@ const About = () => {
                   sx={{ 
                     p: 2, 
                     height: '100%',
-                    background: 'rgba(255,255,255,0.8)',
+                    background: 'rgba(0, 212, 255, 0.05)',
                     backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.3)',
+                    border: '1px solid rgba(0, 212, 255, 0.2)',
+                    transition: 'all 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
+                      boxShadow: '0 8px 20px rgba(0, 212, 255, 0.2)',
+                      borderColor: 'rgba(0, 212, 255, 0.4)'
                     }
                   }}
                 >
-                  <Box sx={{ color: '#667eea', mb: 1 }}>
+                  <Box sx={{ color: '#00d4ff', mb: 1 }}>
                     {item.icon}
                   </Box>
                   <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5, color: 'white' }}>

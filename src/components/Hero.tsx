@@ -48,6 +48,30 @@ const Hero = () => {
       }
     );
 
+    // Parallax effect for profile image
+    gsap.to(imageRef.current, {
+      yPercent: -20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Parallax effect for text content
+    gsap.to(textRef.current, {
+      yPercent: -10,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
     // Enhanced letter animations with GSAP
     const letters = document.querySelectorAll('.letter-animate');
     if (letters.length > 0) {
@@ -105,7 +129,7 @@ const Hero = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'var(--bg-primary)',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -115,7 +139,7 @@ const Hero = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+          background: 'radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(123, 44, 191, 0.08) 0%, transparent 50%)',
           pointerEvents: 'none'
         }
       }}
@@ -125,16 +149,17 @@ const Hero = () => {
           
           {/* Text Content */}
           <ScrollReveal direction="left" duration={1.2}>
-            <Box ref={textRef} sx={{ flex: 1, color: 'var(--text-primary)', overflow: 'visible' }}>
+            <Box ref={textRef} sx={{ flex: 1, color: 'white', overflow: 'visible' }}>
               {/* Status Badge */}
               <Chip 
                 label="🎓 Fresh Graduate • Open to Opportunities" 
                 sx={{ 
                   mb: 3, 
-                  backgroundColor: 'rgba(255,255,255,0.2)', 
-                  color: 'white',
+                  backgroundColor: 'rgba(0, 212, 255, 0.15)', 
+                  color: '#00d4ff',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.3)'
+                  border: '1px solid rgba(0, 212, 255, 0.3)',
+                  fontWeight: 600
                 }} 
               />
               
@@ -199,31 +224,16 @@ const Hero = () => {
                       className="letter-animate"
                       sx={{
                         display: 'inline-block',
-                        background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%)',
-                        backgroundSize: '400% 100%',
+                        background: 'linear-gradient(135deg, #00d4ff 0%, #7b2cbf 50%, #00d4ff 100%)',
+                        backgroundSize: '200% 100%',
                         backgroundClip: 'text',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         animation: `letter-reveal 0.8s ease-out ${index * 0.05}s both, aceternity-shine 3s ease-in-out infinite ${index * 0.1}s`,
-                        textShadow: '0 0 30px rgba(255, 255, 255, 0.5)',
                         position: 'relative',
-                        '&::before': {
-                          content: '""',
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)',
-                          backgroundSize: '200% 100%',
-                          animation: `aceternity-sweep 4s ease-in-out infinite ${index * 0.05}s`,
-                          mixBlendMode: 'overlay',
-                          pointerEvents: 'none'
-                        },
                         '&:hover': {
-                          transform: 'scale(1.1) translateY(-5px)',
-                          transition: 'all 0.3s cubic-bezier(0.23, 1, 0.320, 1)',
-                          textShadow: '0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 107, 107, 0.4)'
+                          transform: 'scale(1.05) translateY(-3px)',
+                          transition: 'all 0.3s cubic-bezier(0.23, 1, 0.320, 1)'
                         }
                       }}
                     >
@@ -238,11 +248,10 @@ const Hero = () => {
                       display: 'inline-block',
                       width: '3px',
                       height: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
-                      backgroundColor: '#ff6b6b',
+                      backgroundColor: '#7b2cbf',
                       marginLeft: '4px',
                       animation: 'cursor-blink 1s infinite, cursor-fade 0.5s ease-in-out 4s forwards',
-                      borderRadius: '2px',
-                      boxShadow: '0 0 10px rgba(255, 107, 107, 0.8)'
+                      borderRadius: '2px'
                     }}
                   />
                 </Box>
@@ -253,7 +262,7 @@ const Hero = () => {
                 component="h2" 
                 sx={{ 
                   mb: 3,
-                  background: 'linear-gradient(45deg, #FFD700, #FFA500)',
+                  background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -277,19 +286,25 @@ const Hero = () => {
               </Typography>
 
               {/* Tech Stack Pills */}
-              <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                {['React', 'Node.js', 'MongoDB', 'Express', 'Next.js', 'Prisma'].map((tech) => (
+              <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap', gap: 1.5, maxWidth: '500px' }}>
+                {['React', 'Node.js', 'MongoDB', 'Express', 'Next.js', 'Prisma'].map((tech, index) => (
                   <Chip
                     key={tech}
                     label={tech}
-                    size="small"
+                    size="medium"
                     sx={{
-                      backgroundColor: 'rgba(255,255,255,0.15)',
-                      color: 'white',
+                      backgroundColor: 'rgba(0, 212, 255, 0.12)',
+                      color: '#00d4ff',
                       backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.2)',
+                      border: '1px solid rgba(0, 212, 255, 0.3)',
+                      fontWeight: 600,
+                      fontSize: '0.9rem',
+                      px: 1,
+                      transition: 'all 0.3s ease',
                       '&:hover': {
-                        backgroundColor: 'rgba(255,255,255,0.25)'
+                        backgroundColor: 'rgba(0, 212, 255, 0.2)',
+                        transform: 'translateY(-2px)',
+                        borderColor: 'rgba(0, 212, 255, 0.5)'
                       }
                     }}
                   />
@@ -306,17 +321,15 @@ const Hero = () => {
                   sx={{
                     px: 4,
                     py: 1.5,
-                    backgroundColor: 'rgba(255,255,255,0.9)',
-                    color: '#667eea',
+                    backgroundColor: '#00d4ff',
+                    color: '#1a1a2e',
                     fontWeight: 'bold',
                     textTransform: 'none',
                     borderRadius: '50px',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.3)',
                     '&:hover': {
-                      backgroundColor: 'white',
+                      backgroundColor: '#00b8e6',
                       transform: 'translateY(-2px)',
-                      boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+                      boxShadow: '0 8px 20px rgba(0, 212, 255, 0.3)'
                     }
                   }}
                 >
@@ -335,16 +348,16 @@ const Hero = () => {
                   sx={{
                     px: 4,
                     py: 1.5,
-                    color: 'white',
+                    color: '#00d4ff',
                     fontWeight: 'bold',
                     textTransform: 'none',
                     borderRadius: '50px',
-                    border: '2px solid rgba(255,255,255,0.3)',
-                    backdropFilter: 'blur(10px)',
+                    border: '2px solid #00d4ff',
+                    backgroundColor: 'transparent',
                     '&:hover': {
-                      backgroundColor: 'rgba(255,255,255,0.1)',
+                      backgroundColor: 'rgba(0, 212, 255, 0.1)',
                       transform: 'translateY(-2px)',
-                      borderColor: 'rgba(255,255,255,0.6)'
+                      borderColor: '#00b8e6'
                     }
                   }}
                 >
@@ -364,11 +377,11 @@ const Hero = () => {
                     minWidth: 'auto',
                     p: 1.5,
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(255,255,255,0.1)',
-                    color: 'white',
-                    backdropFilter: 'blur(10px)',
+                    backgroundColor: 'rgba(0, 212, 255, 0.12)',
+                    color: '#00d4ff',
+                    border: '1px solid rgba(0, 212, 255, 0.3)',
                     '&:hover': {
-                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      backgroundColor: 'rgba(0, 212, 255, 0.2)',
                       transform: 'scale(1.1)'
                     }
                   }}
@@ -383,11 +396,11 @@ const Hero = () => {
                     minWidth: 'auto',
                     p: 1.5,
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(255,255,255,0.1)',
-                    color: 'white',
-                    backdropFilter: 'blur(10px)',
+                    backgroundColor: 'rgba(123, 44, 191, 0.12)',
+                    color: '#7b2cbf',
+                    border: '1px solid rgba(123, 44, 191, 0.3)',
                     '&:hover': {
-                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      backgroundColor: 'rgba(123, 44, 191, 0.2)',
                       transform: 'scale(1.1)'
                     }
                   }}
@@ -432,8 +445,8 @@ const Hero = () => {
                   style={{
                     borderRadius: '50%',
                     objectFit: 'cover',
-                    border: '4px solid rgba(255,255,255,0.3)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                    border: '4px solid rgba(0, 212, 255, 0.4)',
+                    boxShadow: '0 10px 40px rgba(0, 212, 255, 0.2), 0 0 0 10px rgba(0, 212, 255, 0.05)',
                     position: 'relative',
                     zIndex: 1,
                     transition: 'transform 0.3s ease',

@@ -154,7 +154,7 @@ const Contact = () => {
       id="contact" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #0f3460 0%, #16213e 100%)',
         color: 'white',
         position: 'relative'
       }} 
@@ -167,11 +167,11 @@ const Contact = () => {
             label="Get In Touch" 
             sx={{ 
               mb: 2, 
-              backgroundColor: 'rgba(255,255,255,0.2)', 
-              color: 'white',
+              backgroundColor: 'rgba(0, 212, 255, 0.15)', 
+              color: '#00d4ff',
               fontWeight: 600,
               px: 2,
-              backdropFilter: 'blur(10px)'
+              border: '1px solid rgba(0, 212, 255, 0.3)'
             }} 
           />
           <Typography 
@@ -180,7 +180,10 @@ const Contact = () => {
             sx={{ 
               fontWeight: 800,
               mb: 2,
-              color: 'white'
+              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}
           >
             Let&apos;s Work Together
@@ -207,14 +210,15 @@ const Contact = () => {
                   key={index}
                   sx={{
                     mb: 2,
-                    background: 'rgba(255,255,255,0.1)',
+                    background: 'rgba(0, 212, 255, 0.05)',
                     backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.2)',
+                    border: '1px solid rgba(0, 212, 255, 0.2)',
+                    transition: 'all 0.3s ease',
                     '&:hover': {
-                      background: 'rgba(255,255,255,0.15)',
-                      transform: 'translateX(8px)'
-                    },
-                    transition: 'all 0.3s ease'
+                      background: 'rgba(0, 212, 255, 0.1)',
+                      transform: 'translateX(8px)',
+                      borderColor: 'rgba(0, 212, 255, 0.4)'
+                    }
                   }}
                 >
                   <CardContent sx={{ p: 3 }}>
@@ -264,11 +268,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
-                    color: 'white',
-                    borderColor: 'rgba(255,255,255,0.3)',
+                    color: '#00d4ff',
+                    borderColor: 'rgba(0, 212, 255, 0.3)',
                     '&:hover': {
-                      borderColor: 'white',
-                      backgroundColor: 'rgba(255,255,255,0.1)'
+                      borderColor: '#00d4ff',
+                      backgroundColor: 'rgba(0, 212, 255, 0.1)'
                     }
                   }}
                   variant="outlined"
@@ -281,11 +285,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
-                    color: 'white',
-                    borderColor: 'rgba(255,255,255,0.3)',
+                    color: '#c77dff',
+                    borderColor: 'rgba(123, 44, 191, 0.3)',
                     '&:hover': {
-                      borderColor: 'white',
-                      backgroundColor: 'rgba(255,255,255,0.1)'
+                      borderColor: '#c77dff',
+                      backgroundColor: 'rgba(123, 44, 191, 0.1)'
                     }
                   }}
                   variant="outlined"
@@ -301,9 +305,9 @@ const Contact = () => {
             <Card 
               className="contact-item"
               sx={{
-                background: 'rgba(255,255,255,0.1)',
+                background: 'rgba(0, 212, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255,255,255,0.2)',
+                border: '1px solid rgba(0, 212, 255, 0.2)',
                 borderRadius: '16px'
               }}
             >
@@ -456,16 +460,16 @@ const Contact = () => {
                     startIcon={<Send />}
                     disabled={loading}
                     sx={{
-                      backgroundColor: 'white',
-                      color: '#667eea',
+                      backgroundColor: '#00d4ff',
+                      color: '#1a1a2e',
                       fontWeight: 'bold',
                       px: 4,
                       py: 1.5,
                       '&:hover': {
-                        backgroundColor: 'rgba(255,255,255,0.9)'
+                        backgroundColor: '#00b8e6'
                       },
                       '&:disabled': {
-                        backgroundColor: 'rgba(255,255,255,0.5)'
+                        backgroundColor: 'rgba(0, 212, 255, 0.3)'
                       }
                     }}
                   >

@@ -52,10 +52,11 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
         color: 'white',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderTop: '1px solid rgba(0, 212, 255, 0.2)'
       }}
     >
       {/* Decorative Background Elements */}
@@ -97,7 +98,10 @@ const Footer = () => {
                 sx={{ 
                   fontWeight: 800, 
                   mb: 2,
-                  color: 'white'
+                  background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
                 }}
               >
                 Santheep Krishna V G
@@ -179,12 +183,13 @@ const Footer = () => {
                       width: 48,
                       height: 48,
                       borderRadius: '50%',
-                      backgroundColor: 'rgba(255,255,255,0.1)',
-                      color: 'white',
+                      backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                      color: '#00d4ff',
+                      border: '1px solid rgba(0, 212, 255, 0.3)',
                       '&:hover': {
-                        backgroundColor: social.color,
+                        backgroundColor: 'rgba(0, 212, 255, 0.2)',
                         transform: 'translateY(-4px) scale(1.1)',
-                        boxShadow: `0 8px 25px ${social.color}40`
+                        borderColor: 'rgba(0, 212, 255, 0.5)'
                       },
                       transition: 'all 0.3s ease'
                     }}
@@ -199,14 +204,16 @@ const Footer = () => {
                 onClick={scrollToTop}
                 startIcon={<KeyboardArrowUp />}
                 sx={{
-                  backgroundColor: 'rgba(102, 126, 234, 0.2)',
-                  color: 'white',
+                  backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                  color: '#00d4ff',
                   borderRadius: '25px',
                   px: 3,
                   py: 1,
+                  border: '1px solid rgba(0, 212, 255, 0.3)',
                   '&:hover': {
-                    backgroundColor: '#667eea',
-                    transform: 'translateY(-2px)'
+                    backgroundColor: 'rgba(0, 212, 255, 0.2)',
+                    transform: 'translateY(-2px)',
+                    borderColor: 'rgba(0, 212, 255, 0.5)'
                   },
                   transition: 'all 0.3s ease'
                 }}

@@ -54,6 +54,21 @@ const Projects = () => {
         ease: 'power2.inOut',
         stagger: 0.5
       });
+
+      // Parallax effect for project cards
+      const projectCards = document.querySelectorAll('.floating-card');
+      projectCards.forEach((card, index) => {
+        gsap.to(card, {
+          yPercent: -10 * (index + 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: projectsRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      });
     }
   }, []);
 
@@ -63,7 +78,7 @@ const Projects = () => {
       id="projects" 
       sx={{ 
         py: 15, 
-        background: 'var(--bg-secondary)',
+        background: 'linear-gradient(180deg, #16213e 0%, #0f3460 100%)',
         position: 'relative',
         overflow: 'hidden'
       }} 
@@ -89,14 +104,13 @@ const Projects = () => {
             label="My Work" 
             sx={{ 
               mb: 3, 
-              background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
-              color: 'white',
+              backgroundColor: 'rgba(0, 212, 255, 0.15)',
+              color: '#00d4ff',
               fontWeight: 600,
               px: 3,
               py: 1,
               fontSize: '0.9rem',
-              border: '1px solid rgba(79, 70, 229, 0.3)',
-              backdropFilter: 'blur(10px)'
+              border: '1px solid rgba(0, 212, 255, 0.3)'
             }} 
           />
           <Typography 
@@ -104,7 +118,7 @@ const Projects = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              background: 'linear-gradient(135deg, #ffffff, #f0f0f0)',
+              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -117,7 +131,7 @@ const Projects = () => {
           <Typography 
             variant="h6" 
             sx={{ 
-              color: 'var(--text-secondary)', 
+              color: 'rgba(255,255,255,0.7)', 
               maxWidth: '600px', 
               mx: 'auto',
               lineHeight: 1.6
@@ -139,9 +153,9 @@ const Projects = () => {
               key={project.id}
               className="floating-card"
               sx={{
-                background: 'var(--bg-card)',
+                background: 'rgba(0, 212, 255, 0.05)',
                 backdropFilter: 'blur(20px)',
-                border: '1px solid var(--border-color)',
+                border: '1px solid rgba(0, 212, 255, 0.2)',
                 borderRadius: '24px',
                 overflow: 'hidden',
                 transformStyle: 'preserve-3d',
@@ -204,7 +218,7 @@ const Projects = () => {
                   component="h3" 
                   sx={{ 
                     fontWeight: 700, 
-                    color: 'var(--text-primary)',
+                    color: 'white',
                     fontSize: '1.4rem',
                     mb: 2
                   }}
@@ -215,7 +229,7 @@ const Projects = () => {
                 <Typography 
                   variant="body2" 
                   sx={{ 
-                    color: 'var(--text-secondary)', 
+                    color: 'rgba(255,255,255,0.7)', 
                     lineHeight: 1.6,
                     fontSize: '0.9rem',
                     mb: 3
@@ -226,7 +240,7 @@ const Projects = () => {
 
                 {/* Technologies */}
                 <Box sx={{ mb: 3 }}>
-                  <Typography variant="subtitle2" sx={{ color: 'var(--text-primary)', mb: 1.5, fontWeight: 600 }}>
+                  <Typography variant="subtitle2" sx={{ color: 'white', mb: 1.5, fontWeight: 600 }}>
                     Technologies Used:
                   </Typography>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -316,7 +330,7 @@ const Projects = () => {
 
         {/* Call to Action */}
         <Box sx={{ textAlign: 'center', mt: 12 }}>
-          <Typography variant="h6" sx={{ mb: 3, color: 'var(--text-primary)' }}>
+          <Typography variant="h6" sx={{ mb: 3, color: 'white' }}>
             Want to see more of my work?
           </Typography>
           <Button
