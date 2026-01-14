@@ -48,27 +48,27 @@ const Hero = () => {
       }
     );
 
-    // Parallax effect for profile image
+    // Parallax effect for profile image - more pronounced
     gsap.to(imageRef.current, {
-      yPercent: -20,
+      y: -100,
       ease: 'none',
       scrollTrigger: {
         trigger: heroRef.current,
         start: 'top top',
         end: 'bottom top',
-        scrub: true
+        scrub: 1
       }
     });
 
     // Parallax effect for text content
     gsap.to(textRef.current, {
-      yPercent: -10,
+      y: -50,
       ease: 'none',
       scrollTrigger: {
         trigger: heroRef.current,
         start: 'top top',
         end: 'bottom top',
-        scrub: true
+        scrub: 1
       }
     });
 

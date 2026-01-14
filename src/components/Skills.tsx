@@ -74,17 +74,17 @@ const Skills = () => {
         }
       );
 
-      // Parallax effect for skill cards
+      // Parallax effect for skill cards - more visible
       const skillCards = document.querySelectorAll('.skill-item');
       skillCards.forEach((card, index) => {
         gsap.to(card, {
-          yPercent: -15 * (index % 3 + 1),
+          y: -80 * (index % 3 + 1),
           ease: 'none',
           scrollTrigger: {
             trigger: skillsRef.current,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true
+            scrub: 1
           }
         });
       });

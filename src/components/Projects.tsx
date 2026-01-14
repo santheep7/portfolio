@@ -55,17 +55,17 @@ const Projects = () => {
         stagger: 0.5
       });
 
-      // Parallax effect for project cards
+      // Parallax effect for project cards - more visible
       const projectCards = document.querySelectorAll('.floating-card');
       projectCards.forEach((card, index) => {
         gsap.to(card, {
-          yPercent: -10 * (index + 1),
+          y: -60 * (index + 1),
           ease: 'none',
           scrollTrigger: {
             trigger: projectsRef.current,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true
+            scrub: 1
           }
         });
       });

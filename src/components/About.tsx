@@ -49,27 +49,27 @@ const About = () => {
         }
       );
 
-      // Parallax effect for text content
+      // Parallax effect for text content - more visible
       gsap.to(textRef.current, {
-        yPercent: -10,
+        y: -60,
         ease: 'none',
         scrollTrigger: {
           trigger: aboutRef.current,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: true
+          scrub: 1
         }
       });
 
-      // Parallax effect for image
+      // Parallax effect for image - more pronounced
       gsap.to(imageRef.current, {
-        yPercent: -15,
+        y: -80,
         ease: 'none',
         scrollTrigger: {
           trigger: aboutRef.current,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: true
+          scrub: 1
         }
       });
     }
