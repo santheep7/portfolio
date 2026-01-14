@@ -82,7 +82,7 @@ const Skills = () => {
       id="skills" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
         position: 'relative'
       }} 
@@ -107,12 +107,13 @@ const Skills = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              mb: 2
+              mb: 2,
+              color: 'white'
             }}
           >
             Technical Expertise
           </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', mx: 'auto' }}>
             Proficient in modern web technologies with a focus on performance and scalability
           </Typography>
         </Box>

@@ -57,7 +57,7 @@ const About = () => {
       id="about" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%)',
         position: 'relative'
       }} 
       ref={aboutRef}
@@ -80,16 +80,13 @@ const About = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              background: 'linear-gradient(45deg, #667eea, #764ba2)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'white',
               mb: 2
             }}
           >
             Crafting Digital Excellence
           </Typography>
-          <Typography variant="h6" sx={{ color: 'text.secondary', maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', mx: 'auto' }}>
             Passionate developer with a mission to build innovative solutions that make a difference
           </Typography>
         </Box>
@@ -108,19 +105,19 @@ const About = () => {
                 sx={{ 
                   fontWeight: 700, 
                   mb: 3,
-                  color: '#1a202c'
+                  color: 'white'
                 }}
               >
                 Aspiring Full Stack Developer
               </Typography>
               
-              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, color: 'text.secondary' }}>
+              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                 Recent graduate passionate about web development with hands-on experience in the MERN stack. 
                 I enjoy building responsive web applications and learning new technologies to create 
                 meaningful digital solutions.
               </Typography>
               
-              <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.8, color: 'text.secondary' }}>
+              <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                 Currently expanding my skills in Next.js, Prisma, and modern UI frameworks. 
                 I&apos;m eager to contribute to innovative projects and grow as a developer in a 
                 collaborative environment.
@@ -137,7 +134,7 @@ const About = () => {
                   <Typography variant="h3" sx={{ fontWeight: 800, color: '#667eea' }}>
                     6+
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
                     Months Learning
                   </Typography>
                 </Box>
@@ -145,7 +142,7 @@ const About = () => {
                   <Typography variant="h3" sx={{ fontWeight: 800, color: '#667eea' }}>
                     6+
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
                     Projects Built
                   </Typography>
                 </Box>
@@ -181,10 +178,10 @@ const About = () => {
                   <Box sx={{ color: '#667eea', mb: 1 }}>
                     {item.icon}
                   </Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5, color: 'white' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)' }}>
                     {item.desc}
                   </Typography>
                 </Card>

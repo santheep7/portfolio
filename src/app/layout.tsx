@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
-import CustomThemeProvider from '@/components/ThemeProvider'
 import ClientWrapper from '@/components/ClientWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,11 +34,9 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/developer.gif" type="image/gif" />
       </head>
       <body className={inter.className}>
-        <CustomThemeProvider>
-          <ClientWrapper>
-            {children}
-          </ClientWrapper>
-        </CustomThemeProvider>
+        <ClientWrapper>
+          {children}
+        </ClientWrapper>
       </body>
     </html>
   )

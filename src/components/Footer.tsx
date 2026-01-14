@@ -52,7 +52,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background: 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)',
+        background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
         color: 'white',
         position: 'relative',
         overflow: 'hidden'
@@ -97,15 +97,12 @@ const Footer = () => {
                 sx={{ 
                   fontWeight: 800, 
                   mb: 2,
-                  background: 'linear-gradient(45deg, #667eea, #764ba2)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
+                  color: 'white'
                 }}
               >
                 Santheep Krishna V G
               </Typography>
-              <Typography variant="body2" sx={{ mb: 3, opacity: 0.8, lineHeight: 1.6 }}>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>
                 Full Stack MERN Developer passionate about creating innovative web solutions. 
                 Always eager to learn new technologies and take on challenging projects.
               </Typography>
@@ -113,20 +110,20 @@ const Footer = () => {
               {/* Contact Info */}
               <Box sx={{ mb: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <LocationOn sx={{ fontSize: 16, mr: 1, opacity: 0.7 }} />
-                  <Typography variant="body2" sx={{ opacity: 0.8 }}>
+                  <LocationOn sx={{ fontSize: 16, mr: 1, color: 'rgba(255,255,255,0.8)' }} />
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
                     Kerala, India
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <Phone sx={{ fontSize: 16, mr: 1, opacity: 0.7 }} />
-                  <Typography variant="body2" sx={{ opacity: 0.8 }}>
+                  <Phone sx={{ fontSize: 16, mr: 1, color: 'rgba(255,255,255,0.8)' }} />
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
                     +91 8075738744
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Email sx={{ fontSize: 16, mr: 1, opacity: 0.7 }} />
-                  <Typography variant="body2" sx={{ opacity: 0.8 }}>
+                  <Email sx={{ fontSize: 16, mr: 1, color: 'rgba(255,255,255,0.8)' }} />
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
                     santheepkrishna@gmail.com
                   </Typography>
                 </Box>
@@ -135,7 +132,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: 'white' }}>
                 Quick Links
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -165,7 +162,7 @@ const Footer = () => {
 
             {/* Social Links & Newsletter */}
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: 'white' }}>
                 Connect With Me
               </Typography>
               
@@ -233,16 +230,16 @@ const Footer = () => {
             gap: 2
           }}
         >
-          <Typography variant="body2" sx={{ opacity: 0.7 }}>
+          <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
             © {new Date().getFullYear()} Santheep Krishna V G. All rights reserved.
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography variant="body2" sx={{ opacity: 0.7 }}>
+            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
               Made with
             </Typography>
             <Favorite sx={{ color: '#ff4757', fontSize: 16 }} />
-            <Typography variant="body2" sx={{ opacity: 0.7 }}>
+            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
               using Next.js & Material-UI
             </Typography>
           </Box>

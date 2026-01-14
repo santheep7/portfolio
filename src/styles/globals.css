@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme Variables */
-:root[data-theme="dark"] {
-  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --bg-secondary: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-  --bg-card: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --accent-color: #4f46e5;
-  --accent-secondary: #7c3aed;
-}
-
-:root[data-theme="light"] {
-  --bg-primary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  --bg-secondary: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-  --bg-card: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  --text-primary: #1f2937;
-  --text-secondary: rgba(31, 41, 55, 0.7);
-  --border-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #7c3aed;
-  --accent-secondary: #4f46e5;
-}
-
 /* Base Styles */
 html {
   scroll-behavior: smooth;
@@ -37,6 +14,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: all 0.3s ease;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
 }
 
 /* Scrollbar Styles */

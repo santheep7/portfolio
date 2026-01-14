@@ -154,7 +154,7 @@ const Contact = () => {
       id="contact" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
         position: 'relative'
       }} 
@@ -179,12 +179,13 @@ const Contact = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              mb: 2
+              mb: 2,
+              color: 'white'
             }}
           >
             Let&apos;s Work Together
           </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', mx: 'auto' }}>
             Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s discuss how we can bring your ideas to life.
           </Typography>
         </Box>
@@ -196,7 +197,7 @@ const Contact = () => {
         }}>
           {/* Contact Information */}
           <Box className="contact-item">
-            <Typography variant="h4" sx={{ fontWeight: 700, mb: 4 }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'white' }}>
               Contact Information
             </Typography>
             
@@ -253,7 +254,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <Box>
-              <Typography variant="h6" sx={{ mb: 2 }}>
+              <Typography variant="h6" sx={{ mb: 2, color: 'white' }}>
                 Follow Me
               </Typography>
               <Box sx={{ display: 'flex', gap: 2 }}>
@@ -456,7 +457,7 @@ const Contact = () => {
                     disabled={loading}
                     sx={{
                       backgroundColor: 'white',
-                      color: '#ff6b6b',
+                      color: '#667eea',
                       fontWeight: 'bold',
                       px: 4,
                       py: 1.5,
