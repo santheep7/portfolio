@@ -15,58 +15,102 @@ if (typeof window !== 'undefined') {
 
 const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
+  const deckRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Floating cards animation
-      gsap.fromTo(
-        '.floating-card',
-        { 
-          opacity: 0, 
-          y: 150, 
-          rotationX: 45,
-          rotationY: 15,
-          scale: 0.8
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          rotationY: 0,
-          scale: 1,
-          duration: 1.5,
-          stagger: 0.3,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: projectsRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-
-      // Continuous floating animation
-      gsap.to('.floating-card', {
-        y: -10,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power2.inOut',
-        stagger: 0.5
+      const cards = gsap.utils.toArray('.deck-card') as HTMLElement[];
+      const totalCards = cards.length;
+      
+      // Initial stacked position - all cards stacked on the right side
+      cards.forEach((card, index) => {
+        gsap.set(card, {
+          position: 'absolute',
+          top: '100px',
+          left: 'auto',
+          right: '5%',
+          xPercent: 0,
+          yPercent: 0,
+          zIndex: cards.length - index,
+          rotationZ: -3 + (index * 1.5),
+          scale: 1 - (index * 0.02),
+          x: 0,
+          y: index * 10,
+          opacity: 1
+        });
       });
 
-      // Parallax effect for project cards - more visible
-      const projectCards = document.querySelectorAll('.floating-card');
-      projectCards.forEach((card, index) => {
-        gsap.to(card, {
-          y: -60 * (index + 1),
-          ease: 'none',
-          scrollTrigger: {
-            trigger: projectsRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-          }
+      // Simple one-time distribution animation when section comes into view
+      ScrollTrigger.create({
+        trigger: deckRef.current,
+        start: 'top 70%',
+        once: true, // Only trigger once
+        onEnter: () => {
+          cards.forEach((card, index) => {
+            if (index === totalCards - 1) {
+              // Bottom card (ShopinGo) - stays on the right with spacing
+              gsap.to(card, {
+                right: '5%',
+                left: 'auto',
+                xPercent: 0,
+                x: 0,
+                y: 100,
+                rotationZ: 0,
+                scale: 1,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.out'
+              });
+            } else if (index === 1) {
+              // Middle card (EcoBin) - flies to center with proper spacing
+              gsap.to(card, {
+                left: '50%',
+                right: 'auto',
+                xPercent: -50,
+                x: 0,
+                y: 100,
+                rotationZ: 0,
+                scale: 1,
+                duration: 1.2,
+                delay: 0.1,
+                ease: 'power3.out'
+              });
+            } else {
+              // Top card (BikeBuddie) - flies to left with spacing
+              gsap.to(card, {
+                left: '5%',
+                right: 'auto',
+                xPercent: 0,
+                x: 0,
+                y: 100,
+                rotationZ: 0,
+                scale: 1,
+                duration: 1.2,
+                ease: 'power3.out'
+              });
+            }
+          });
+        }
+      });
+
+      // Individual card hover effects
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            scale: 1.05,
+            y: 85,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            scale: 1,
+            y: 100,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
         });
       });
     }
@@ -141,30 +185,37 @@ const Projects = () => {
           </Typography>
         </Box>
 
-        {/* Projects Grid */}
-        <Box sx={{ 
-          display: 'grid', 
-          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, 
-          gap: 4,
-          perspective: '1000px'
-        }}>
+        {/* Deck of Cards Container */}
+        <Box 
+          ref={deckRef}
+          sx={{ 
+            position: 'relative',
+            minHeight: { xs: '1200px', md: '900px', lg: '800px' },
+            width: '100%',
+            maxWidth: '100%',
+            margin: '0 auto',
+            perspective: '2000px',
+            mb: 8,
+            px: { xs: 2, md: 4 }
+          }}
+        >
           {projects.map((project) => (
             <Box
               key={project.id}
-              className="floating-card"
+              className="deck-card"
               sx={{
-                background: 'rgba(0, 212, 255, 0.05)',
+                width: { xs: '90%', sm: '350px', md: '370px' },
+                maxWidth: '370px',
+                minHeight: '650px',
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(123, 44, 191, 0.08))',
                 backdropFilter: 'blur(20px)',
-                border: '1px solid rgba(0, 212, 255, 0.2)',
+                border: '2px solid rgba(0, 212, 255, 0.3)',
                 borderRadius: '24px',
                 overflow: 'hidden',
                 transformStyle: 'preserve-3d',
-                transition: 'all 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
-                '&:hover': {
-                  transform: 'translateY(-20px) rotateX(5deg) rotateY(5deg)',
-                  boxShadow: '0 30px 60px rgba(0, 0, 0, 0.3)',
-                  border: '1px solid rgba(79, 70, 229, 0.3)'
-                }
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 255, 0.2)',
+                cursor: 'pointer',
+                willChange: 'transform'
               }}
             >
               {/* Project Image */}
