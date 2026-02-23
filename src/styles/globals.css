@@ -319,10 +319,10 @@ img {
 /* Shining text effect for name */
 @keyframes shine-text {
   0% {
-    background-position: -200% center;
+    background-position: -500% center;
   }
   100% {
-    background-position: 200% center;
+    background-position: 500% center;
   }
 }
 
@@ -330,16 +330,48 @@ img {
   background: linear-gradient(
     90deg,
     #00d4ff 0%,
-    #ffffff 25%,
-    #00d4ff 50%,
-    #c77dff 75%,
-    #00d4ff 100%
+    #00d4ff 20%,
+    #ffffff 40%,
+    #ffffff 50%,
+    #ffffff 60%,
+    #c77dff 80%,
+    #c77dff 100%
+  );
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-text 4s linear infinite;
+  position: relative;
+}
+
+.shine-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 70%,
+    transparent 100%
   );
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine-text 3s linear infinite;
+  animation: shine-overlay 3s linear infinite;
+}
+
+@keyframes shine-overlay {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 /* Aceternity UI Style Animations */

@@ -6,6 +6,7 @@ import { Container, Typography, Button, Box, Chip } from '@mui/material';
 import { Download, GitHub, LinkedIn, Mail } from '@mui/icons-material';
 import Image from 'next/image';
 import ScrollReveal from './ScrollReveal';
+import ShinyText from './ui/ShinyText';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -196,9 +197,16 @@ const Hero = () => {
                     cursor: 'pointer',
                     letterSpacing: '0.02em'
                   }}
-                  className="shine-text"
                 >
-                  SANTHEEP KRISHNA V G
+                  <ShinyText
+                    text="SANTHEEP KRISHNA V G"
+                    speed={3}
+                    color="#00d4ff"
+                    shineColor="#ffffff"
+                    spread={90}
+                    direction="left"
+                    className="font-extrabold"
+                  />
                 </Box>
               </Box>
               
