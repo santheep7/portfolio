@@ -316,6 +316,32 @@ img {
     0 20px 40px rgba(255, 107, 107, 0.2);
 }
 
+/* Shining text effect for name */
+@keyframes shine-text {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shine-text {
+  background: linear-gradient(
+    90deg,
+    #00d4ff 0%,
+    #ffffff 25%,
+    #00d4ff 50%,
+    #c77dff 75%,
+    #00d4ff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-text 3s linear infinite;
+}
+
 /* Aceternity UI Style Animations */
 .aceternity-card {
   transform-style: preserve-3d;

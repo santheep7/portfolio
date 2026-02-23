@@ -194,49 +194,11 @@ const Hero = () => {
                     position: 'relative',
                     display: 'inline-block',
                     cursor: 'pointer',
-                    letterSpacing: '0.02em',
-                    '&:hover .letter-animate': {
-                      animation: 'letter-glow 0.6s ease-in-out'
-                    }
+                    letterSpacing: '0.02em'
                   }}
+                  className="shine-text"
                 >
-                  {'SANTHEEP KRISHNA V G'.split('').map((letter, index) => (
-                    <Typography
-                      key={index}
-                      component="span"
-                      className="letter-animate"
-                      sx={{
-                        display: 'inline-block',
-                        background: 'linear-gradient(135deg, #00d4ff 0%, #7b2cbf 50%, #00d4ff 100%)',
-                        backgroundSize: '200% 100%',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        animation: `letter-reveal 0.8s ease-out ${index * 0.05}s both, aceternity-shine 3s ease-in-out infinite ${index * 0.1}s`,
-                        position: 'relative',
-                        '&:hover': {
-                          transform: 'scale(1.05) translateY(-3px)',
-                          transition: 'all 0.3s cubic-bezier(0.23, 1, 0.320, 1)'
-                        }
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </Typography>
-                  ))}
-                  
-                  {/* Cursor effect */}
-                  <Box
-                    className="typing-cursor"
-                    sx={{
-                      display: 'inline-block',
-                      width: '3px',
-                      height: { xs: '1.8rem', sm: '2.5rem', md: '3.2rem', lg: '3.8rem' },
-                      backgroundColor: '#7b2cbf',
-                      marginLeft: '4px',
-                      animation: 'cursor-blink 1s infinite, cursor-fade 0.5s ease-in-out 4s forwards',
-                      borderRadius: '2px'
-                    }}
-                  />
+                  SANTHEEP KRISHNA V G
                 </Box>
               </Box>
               
