@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,95 +11,101 @@ if (typeof window !== 'undefined') {
 
 export default function ParallaxElements() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Tech Sun Rising Effect - comes from bottom (more dramatic)
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isMounted) {
+      // Tech Sun Rising Effect - comes from bottom (optimized)
       gsap.fromTo('.tech-sun',
         { 
-          y: 400,
+          y: 300,
           opacity: 0,
-          scale: 0.3
+          scale: 0.5
         },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 2,
-          ease: 'power3.out',
+          duration: 1.5,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: '.tech-sun',
             start: 'top 90%',
-            end: 'top 20%',
-            scrub: 2,
+            end: 'top 30%',
+            scrub: 1,
             markers: false
           }
         }
       );
 
-      // Code blocks sliding from left - more dramatic
+      // Code blocks sliding from left - optimized
       const leftElements = gsap.utils.toArray('.slide-from-left') as HTMLElement[];
-      leftElements.forEach((element, index) => {
+      leftElements.forEach((element) => {
         gsap.fromTo(element,
           { 
-            x: -500,
-            opacity: 0,
-            rotateY: -60
+            x: -400,
+            opacity: 0
           },
           {
             x: 0,
             opacity: 1,
-            rotateY: 0,
-            duration: 1.5,
+            duration: 1,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: element,
               start: 'top 85%',
-              end: 'top 30%',
-              scrub: 2,
+              end: 'top 40%',
+              scrub: 1,
               markers: false
             }
           }
         );
       });
 
-      // Terminal sliding from right - more dramatic
+      // Terminal sliding from right - optimized
       const rightElements = gsap.utils.toArray('.slide-from-right') as HTMLElement[];
-      rightElements.forEach((element, index) => {
+      rightElements.forEach((element) => {
         gsap.fromTo(element,
           { 
-            x: 500,
-            opacity: 0,
-            rotateY: 60
+            x: 400,
+            opacity: 0
           },
           {
             x: 0,
             opacity: 1,
-            rotateY: 0,
-            duration: 1.5,
+            duration: 1,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: element,
               start: 'top 85%',
-              end: 'top 30%',
-              scrub: 2,
+              end: 'top 40%',
+              scrub: 1,
               markers: false
             }
           }
         );
       });
 
-      // Floating elements with rotation
+      // Floating elements with rotation - simplified
       gsap.to('.float-rotate', {
-        y: -30,
-        rotation: 360,
-        duration: 4,
+        y: -20,
+        rotation: 180,
+        duration: 3,
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut'
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Box
@@ -346,68 +352,6 @@ export default function ParallaxElements() {
         }}
       >
         {'</>'}
-      </Box>
-
-      {/* Additional Tech Elements - Slides from Right */}
-      <Box
-        className="slide-from-right"
-        sx={{
-          position: 'absolute',
-          top: '45%',
-          right: '10%',
-          width: '140px',
-          height: '140px',
-          background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(123, 44, 191, 0.15))',
-          border: '2px solid rgba(199, 125, 255, 0.4)',
-          borderRadius: '20px',
-          backdropFilter: 'blur(10px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '48px',
-          color: '#c77dff',
-          boxShadow: '0 8px 32px rgba(199, 125, 255, 0.2)',
-          transform: 'rotate(15deg)'
-        }}
-      >
-        ⚡
-      </Box>
-
-      {/* Rocket Icon - Slides from Left */}
-      <Box
-        className="slide-from-left"
-        sx={{
-          position: 'absolute',
-          top: '90%',
-          left: '15%',
-          fontSize: '60px',
-          filter: 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.6))'
-        }}
-      >
-        🚀
-      </Box>
-
-      {/* Gear Icon - Slides from Right */}
-      <Box
-        className="slide-from-right"
-        sx={{
-          position: 'absolute',
-          top: '95%',
-          right: '20%',
-          width: '100px',
-          height: '100px',
-          border: '3px solid rgba(0, 212, 255, 0.5)',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'rgba(0, 212, 255, 0.08)',
-          backdropFilter: 'blur(10px)',
-          fontSize: '50px',
-          boxShadow: '0 8px 32px rgba(0, 212, 255, 0.3)'
-        }}
-      >
-        ⚙️
       </Box>
     </Box>
   );

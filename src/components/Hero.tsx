@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Container, Typography, Button, Box, Chip } from '@mui/material';
 import { Download, GitHub, LinkedIn, Mail } from '@mui/icons-material';
@@ -11,8 +11,14 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 50 },
@@ -47,30 +53,6 @@ const Hero = () => {
         stagger: 0.2
       }
     );
-
-    // Parallax effect for profile image - more pronounced
-    gsap.to(imageRef.current, {
-      y: -100,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-
-    // Parallax effect for text content
-    gsap.to(textRef.current, {
-      y: -50,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
 
     // Enhanced letter animations with GSAP
     const letters = document.querySelectorAll('.letter-animate');
@@ -118,6 +100,7 @@ const Hero = () => {
         });
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -341,7 +324,7 @@ const Hero = () => {
                   className="hero-button"
                   startIcon={<Download />}
                   component="a"
-                  href="/Santheep_Krishna_CV.pdf"
+                  href="/Santheep_Krishna__CV.pdf"
                   download="Santheep_Krishna_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -442,6 +425,8 @@ const Hero = () => {
                   width={400}
                   height={400}
                   sizes="(max-width: 768px) 300px, 400px"
+                  quality={80}
+                  priority
                   style={{
                     borderRadius: '50%',
                     objectFit: 'cover',
