@@ -14,8 +14,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  color: #ffffff;
+  background: #d3d3ff;
+  color: #1f1f2e;
 }
 
 /* Scrollbar Styles */
@@ -24,20 +24,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  background: #d3d3ff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00d4ff, #7b2cbf);
+  background: #9f9fff;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00d4ff, #c77dff);
+  background: #7f7fff;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  background: #d3d3ff;
 }
 
 /* Typography Enhancements */

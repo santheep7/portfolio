@@ -16,7 +16,7 @@ const Projects = () => {
       id="projects" 
       sx={{ 
         py: 15, 
-        background: 'linear-gradient(180deg, #16213e 0%, #0f3460 100%)',
+        background: '#ffffff',
         position: 'relative',
         overflow: 'hidden'
       }} 
@@ -42,13 +42,13 @@ const Projects = () => {
             label="My Work" 
             sx={{ 
               mb: 3, 
-              backgroundColor: 'rgba(0, 212, 255, 0.15)',
-              color: '#00d4ff',
+              backgroundColor: '#ffffff',
+              color: '#1f1f2e',
               fontWeight: 600,
               px: 3,
               py: 1,
               fontSize: '0.9rem',
-              border: '1px solid rgba(0, 212, 255, 0.3)'
+              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
             }} 
           />
           <Typography 
@@ -56,10 +56,7 @@ const Projects = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#1f1f2e',
               mb: 3,
               fontSize: { xs: '2.5rem', md: '3.5rem' }
             }}
@@ -69,7 +66,7 @@ const Projects = () => {
           <Typography 
             variant="h6" 
             sx={{ 
-              color: 'rgba(255,255,255,0.7)', 
+              color: '#4a4a68', 
               maxWidth: '600px', 
               mx: 'auto',
               lineHeight: 1.6
@@ -103,21 +100,9 @@ const Projects = () => {
                     sx={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(123, 44, 191, 0.05) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(0, 212, 255, 0.2)',
-                      borderRadius: '16px',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        inset: 0,
-                        borderRadius: '16px',
-                        padding: '1px',
-                        background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(123, 44, 191, 0.3))',
-                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        WebkitMaskComposite: 'xor',
-                        maskComposite: 'exclude'
-                      }
+                      background: '#ffffff',
+                      boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                      borderRadius: '16px'
                     }}
                   />
 
@@ -125,13 +110,13 @@ const Projects = () => {
                   <Box sx={{ position: 'relative', zIndex: 1, p: 3 }}>
                     {/* Project Image */}
                     <CardItem translateZ="100" className="w-full mb-4">
-                      <Box sx={{ 
+                        <Box sx={{ 
                         position: 'relative', 
                         height: '200px', 
                         overflow: 'hidden',
                         borderRadius: '12px',
-                        background: 'rgba(0, 0, 0, 0.2)',
-                        border: '1px solid rgba(0, 212, 255, 0.1)'
+                        background: 'rgba(211, 211, 255, 0.1)',
+                        border: '1px solid rgba(31, 31, 46, 0.1)'
                       }}>
                         <Image
                           src={project.image}
@@ -153,17 +138,16 @@ const Projects = () => {
                             position: 'absolute',
                             top: 12,
                             right: 12,
-                            background: 'linear-gradient(135deg, #00d4ff, #7b2cbf)',
+                            background: '#9f9fff',
                             borderRadius: '8px',
                             px: 2,
                             py: 0.5,
-                            backdropFilter: 'blur(10px)',
-                            boxShadow: '0 4px 15px rgba(0, 212, 255, 0.3)'
+                            boxShadow: '0 4px 15px rgba(159, 159, 255, 0.3)'
                           }}
                         >
                           <Typography variant="caption" sx={{ 
                             fontWeight: 700, 
-                            color: 'white', 
+                            color: '#ffffff', 
                             fontSize: '0.7rem',
                             textTransform: 'uppercase',
                             letterSpacing: '0.5px'
@@ -183,12 +167,8 @@ const Projects = () => {
                         variant="h6" 
                         sx={{ 
                           fontWeight: 700, 
-                          color: 'white',
-                          fontSize: '1.25rem',
-                          background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
-                          backgroundClip: 'text',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent'
+                          color: '#1f1f2e',
+                          fontSize: '1.25rem'
                         }}
                       >
                         {project.title}
@@ -203,7 +183,7 @@ const Projects = () => {
                       <Typography 
                         variant="body2" 
                         sx={{ 
-                          color: 'rgba(255,255,255,0.7)', 
+                          color: '#4a4a68', 
                           lineHeight: 1.6,
                           fontSize: '0.85rem'
                         }}
@@ -214,7 +194,7 @@ const Projects = () => {
 
                     {/* Technologies */}
                     <CardItem translateZ="70" className="mb-4">
-                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.9)', mb: 1, fontWeight: 600, fontSize: '0.75rem' }}>
+                      <Typography variant="subtitle2" sx={{ color: '#1f1f2e', mb: 1, fontWeight: 600, fontSize: '0.75rem' }}>
                         Tech Stack
                       </Typography>
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
@@ -259,20 +239,19 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           fullWidth
                           sx={{
-                            borderColor: 'rgba(0, 212, 255, 0.5)',
-                            color: '#00d4ff',
+                            borderColor: '#9f9fff',
+                            color: '#1f1f2e',
                             fontWeight: 600,
                             borderRadius: '10px',
                             py: 1,
                             fontSize: '0.75rem',
                             textTransform: 'none',
-                            backdropFilter: 'blur(10px)',
                             transition: 'all 0.3s ease',
                             '&:hover': {
-                              borderColor: '#00d4ff',
-                              backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                              borderColor: '#7f7fff',
+                              backgroundColor: 'rgba(159, 159, 255, 0.1)',
                               transform: 'translateY(-2px)',
-                              boxShadow: '0 8px 20px rgba(0, 212, 255, 0.3)'
+                              boxShadow: '0 8px 20px rgba(159, 159, 255, 0.3)'
                             }
                           }}
                         >
@@ -293,18 +272,19 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           fullWidth
                           sx={{
-                            background: 'linear-gradient(135deg, #00d4ff, #7b2cbf)',
+                            background: '#9f9fff',
+                            color: '#ffffff',
                             fontWeight: 600,
                             borderRadius: '10px',
                             py: 1,
                             fontSize: '0.75rem',
                             textTransform: 'none',
-                            boxShadow: '0 4px 15px rgba(0, 212, 255, 0.3)',
+                            boxShadow: '0 4px 15px rgba(159, 159, 255, 0.3)',
                             transition: 'all 0.3s ease',
                             '&:hover': {
-                              background: 'linear-gradient(135deg, #00b8e6, #6a1fa0)',
+                              background: '#7f7fff',
                               transform: 'translateY(-2px)',
-                              boxShadow: '0 8px 25px rgba(0, 212, 255, 0.4)'
+                              boxShadow: '0 8px 25px rgba(159, 159, 255, 0.4)'
                             }
                           }}
                         >
@@ -320,7 +300,7 @@ const Projects = () => {
 
         {/* Call to Action */}
         <Box sx={{ textAlign: 'center', mt: 12 }}>
-          <Typography variant="h6" sx={{ mb: 3, color: 'white' }}>
+          <Typography variant="h6" sx={{ mb: 3, color: '#1f1f2e' }}>
             Want to see more of my work?
           </Typography>
           <Button
@@ -331,14 +311,13 @@ const Projects = () => {
             rel="noopener noreferrer"
             size="large"
             sx={{
-              borderColor: 'rgba(79, 70, 229, 0.5)',
-              color: '#4f46e5',
+              borderColor: '#9f9fff',
+              color: '#1f1f2e',
               px: 4,
               py: 1.5,
               fontSize: '1rem',
               fontWeight: 600,
               borderRadius: '16px',
-              backdropFilter: 'blur(10px)',
               position: 'relative',
               overflow: 'hidden',
               transition: 'all 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
@@ -349,14 +328,14 @@ const Projects = () => {
                 left: '-100%',
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(159, 159, 255, 0.1), transparent)',
                 transition: 'left 0.6s ease'
               },
               '&:hover': {
-                borderColor: '#4f46e5',
-                backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                borderColor: '#7f7fff',
+                backgroundColor: 'rgba(159, 159, 255, 0.1)',
                 transform: 'translateY(-3px)',
-                boxShadow: '0 15px 35px rgba(79, 70, 229, 0.3)',
+                boxShadow: '0 15px 35px rgba(159, 159, 255, 0.3)',
                 '&::before': {
                   left: '100%'
                 }

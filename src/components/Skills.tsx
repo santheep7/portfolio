@@ -97,8 +97,8 @@ const Skills = () => {
       id="skills" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
-        color: 'white',
+        background: '#d3d3ff',
+        color: '#1f1f2e',
         position: 'relative'
       }} 
       ref={skillsRef}
@@ -110,11 +110,11 @@ const Skills = () => {
             label="Skills & Technologies" 
             sx={{ 
               mb: 2, 
-              backgroundColor: 'rgba(0, 212, 255, 0.15)', 
-              color: '#00d4ff',
+              backgroundColor: '#ffffff', 
+              color: '#1f1f2e',
               fontWeight: 600,
               px: 2,
-              border: '1px solid rgba(0, 212, 255, 0.3)'
+              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
             }} 
           />
           <Typography 
@@ -123,15 +123,12 @@ const Skills = () => {
             sx={{ 
               fontWeight: 800,
               mb: 2,
-              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              color: '#1f1f2e'
             }}
           >
             Technical Expertise
           </Typography>
-          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: '#4a4a68', maxWidth: '600px', mx: 'auto' }}>
             Proficient in modern web technologies with a focus on performance and scalability
           </Typography>
         </Box>
@@ -147,16 +144,14 @@ const Skills = () => {
               <Card 
                 className="skill-item"
                 sx={{ 
-                  background: 'rgba(0, 212, 255, 0.05)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(0, 212, 255, 0.2)',
+                  background: '#ffffff',
+                  boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
                   borderRadius: '16px',
                   height: '100%',
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: '0 10px 30px rgba(0, 212, 255, 0.2)',
-                    borderColor: 'rgba(0, 212, 255, 0.4)'
+                    boxShadow: '0 10px 30px rgba(31, 31, 46, 0.15)'
                   }
                 }}
               >
@@ -166,7 +161,7 @@ const Skills = () => {
                     sx={{ 
                       fontWeight: 700, 
                       mb: 3, 
-                      color: 'white',
+                      color: '#1f1f2e',
                       textTransform: 'capitalize',
                       textAlign: 'center'
                     }}
@@ -184,10 +179,10 @@ const Skills = () => {
                             </Box>
                             <Box sx={{ flex: 1 }}>
                               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5 }}>
-                                <Typography variant="body1" sx={{ fontWeight: 600, color: 'white' }}>
+                                <Typography variant="body1" sx={{ fontWeight: 600, color: '#1f1f2e' }}>
                                   {skill.name}
                                 </Typography>
-                                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
+                                <Typography variant="body2" sx={{ color: '#4a4a68' }}>
                                   {skill.level}%
                                 </Typography>
                               </Box>
@@ -198,7 +193,7 @@ const Skills = () => {
                                 sx={{
                                   height: 6,
                                   borderRadius: 3,
-                                  backgroundColor: 'rgba(255,255,255,0.2)',
+                                  backgroundColor: 'rgba(31, 31, 46, 0.1)',
                                   '& .MuiLinearProgress-bar': {
                                     backgroundColor: skill.color,
                                     borderRadius: 3

@@ -81,7 +81,7 @@ const About = () => {
       id="about" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 100%)',
+        background: '#ffffff',
         position: 'relative'
       }} 
       ref={aboutRef}
@@ -93,11 +93,11 @@ const About = () => {
             label="About Me" 
             sx={{ 
               mb: 2, 
-              backgroundColor: 'rgba(123, 44, 191, 0.15)', 
-              color: '#c77dff',
+              backgroundColor: '#ffffff', 
+              color: '#1f1f2e',
               fontWeight: 600,
               px: 2,
-              border: '1px solid rgba(123, 44, 191, 0.3)'
+              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
             }} 
           />
           <Typography 
@@ -105,16 +105,13 @@ const About = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              background: 'linear-gradient(90deg, #c77dff, #00d4ff)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#1f1f2e',
               mb: 2
             }}
           >
             Crafting Digital Excellence
           </Typography>
-          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: '#4a4a68', maxWidth: '600px', mx: 'auto' }}>
             Passionate developer with a mission to build innovative solutions that make a difference
           </Typography>
         </Box>
@@ -133,19 +130,19 @@ const About = () => {
                 sx={{ 
                   fontWeight: 700, 
                   mb: 3,
-                  color: 'white'
+                  color: '#1f1f2e'
                 }}
               >
                 Aspiring Full Stack Developer
               </Typography>
               
-              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
+              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, color: '#4a4a68' }}>
                 Recent graduate passionate about web development with hands-on experience in the MERN stack. 
                 I enjoy building responsive web applications and learning new technologies to create 
                 meaningful digital solutions.
               </Typography>
               
-              <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
+              <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.8, color: '#4a4a68' }}>
                 Currently expanding my skills in Next.js, Prisma, and modern UI frameworks. 
                 I&apos;m eager to contribute to innovative projects and grow as a developer in a 
                 collaborative environment.
@@ -159,18 +156,18 @@ const About = () => {
                 mb: 4 
               }}>
                 <Box sx={{ textAlign: 'center' }}>
-                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#00d4ff' }}>
+                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#9f9fff' }}>
                     6+
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <Typography variant="body2" sx={{ color: '#4a4a68' }}>
                     Months Learning
                   </Typography>
                 </Box>
                 <Box sx={{ textAlign: 'center' }}>
-                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#00d4ff' }}>
+                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#9f9fff' }}>
                     6+
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <Typography variant="body2" sx={{ color: '#4a4a68' }}>
                     Projects Built
                   </Typography>
                 </Box>
@@ -194,24 +191,23 @@ const About = () => {
                   sx={{ 
                     p: 2, 
                     height: '100%',
-                    background: 'rgba(0, 212, 255, 0.05)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(0, 212, 255, 0.2)',
+                    background: '#ffffff',
+                    boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                    borderRadius: '12px',
                     transition: 'all 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 8px 20px rgba(0, 212, 255, 0.2)',
-                      borderColor: 'rgba(0, 212, 255, 0.4)'
+                      boxShadow: '0 8px 20px rgba(31, 31, 46, 0.15)'
                     }
                   }}
                 >
-                  <Box sx={{ color: '#00d4ff', mb: 1 }}>
+                  <Box sx={{ color: '#9f9fff', mb: 1 }}>
                     {item.icon}
                   </Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5, color: 'white' }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5, color: '#1f1f2e' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <Typography variant="caption" sx={{ color: '#4a4a68' }}>
                     {item.desc}
                   </Typography>
                 </Card>
@@ -267,8 +263,8 @@ const About = () => {
                   height: 'auto',
                   maxWidth: '400px',
                   borderRadius: '24px',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-                  border: '4px solid white',
+                  boxShadow: '0 20px 40px rgba(31, 31, 46, 0.1)',
+                  border: '4px solid #ffffff',
                   position: 'relative',
                   zIndex: 1,
                 }}

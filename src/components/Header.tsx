@@ -20,15 +20,26 @@ const Header = () => {
   ];
 
   const drawer = (
-    <Box sx={{ width: 250, pt: 2 }}>
+    <Box sx={{ width: 250, pt: 2, background: '#ffffff', height: '100%' }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, pb: 2 }}>
-        <IconButton onClick={handleDrawerToggle}>
+        <IconButton onClick={handleDrawerToggle} sx={{ color: '#1f1f2e' }}>
           <CloseIcon />
         </IconButton>
       </Box>
       <List>
         {menuItems.map((item) => (
-          <ListItem key={item.label} component="a" href={item.href} onClick={handleDrawerToggle}>
+          <ListItem 
+            key={item.label} 
+            component="a" 
+            href={item.href} 
+            onClick={handleDrawerToggle}
+            sx={{ 
+              color: '#1f1f2e',
+              '&:hover': {
+                backgroundColor: 'rgba(159, 159, 255, 0.1)'
+              }
+            }}
+          >
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
@@ -41,14 +52,13 @@ const Header = () => {
       <AppBar 
         position="fixed" 
         sx={{ 
-          background: 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 2px 20px rgba(0,0,0,0.1)',
-          color: '#333'
+          background: '#ffffff',
+          boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+          color: '#1f1f2e'
         }}
       >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700, color: '#1f1f2e' }}>
             Santheep Krishna V G
           </Typography>
           
@@ -59,12 +69,12 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 sx={{
-                  color: '#333',
+                  color: '#1f1f2e',
                   textTransform: 'none',
                   fontWeight: 500,
                   '&:hover': {
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    color: '#667eea'
+                    backgroundColor: 'rgba(159, 159, 255, 0.1)',
+                    color: '#9f9fff'
                   }
                 }}
               >

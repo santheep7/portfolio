@@ -154,8 +154,8 @@ const Contact = () => {
       id="contact" 
       sx={{ 
         py: 10, 
-        background: 'linear-gradient(135deg, #0f3460 0%, #16213e 100%)',
-        color: 'white',
+        background: '#d3d3ff',
+        color: '#1f1f2e',
         position: 'relative'
       }} 
       ref={contactRef}
@@ -167,11 +167,11 @@ const Contact = () => {
             label="Get In Touch" 
             sx={{ 
               mb: 2, 
-              backgroundColor: 'rgba(0, 212, 255, 0.15)', 
-              color: '#00d4ff',
+              backgroundColor: '#ffffff', 
+              color: '#1f1f2e',
               fontWeight: 600,
               px: 2,
-              border: '1px solid rgba(0, 212, 255, 0.3)'
+              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
             }} 
           />
           <Typography 
@@ -180,15 +180,12 @@ const Contact = () => {
             sx={{ 
               fontWeight: 800,
               mb: 2,
-              background: 'linear-gradient(90deg, #00d4ff, #c77dff)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              color: '#1f1f2e'
             }}
           >
             Let&apos;s Work Together
           </Typography>
-          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: '#4a4a68', maxWidth: '600px', mx: 'auto' }}>
             Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s discuss how we can bring your ideas to life.
           </Typography>
         </Box>
@@ -200,7 +197,7 @@ const Contact = () => {
         }}>
           {/* Contact Information */}
           <Box className="contact-item">
-            <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'white' }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: '#1f1f2e' }}>
               Contact Information
             </Typography>
             
@@ -210,24 +207,24 @@ const Contact = () => {
                   key={index}
                   sx={{
                     mb: 2,
-                    background: 'rgba(0, 212, 255, 0.05)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(0, 212, 255, 0.2)',
+                    background: '#ffffff',
+                    boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                    borderRadius: '12px',
                     transition: 'all 0.3s ease',
                     '&:hover': {
-                      background: 'rgba(0, 212, 255, 0.1)',
+                      background: '#ffffff',
                       transform: 'translateX(8px)',
-                      borderColor: 'rgba(0, 212, 255, 0.4)'
+                      boxShadow: '0 4px 12px rgba(31, 31, 46, 0.15)'
                     }
                   }}
                 >
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Box sx={{ color: 'white', mr: 3 }}>
+                      <Box sx={{ color: '#9f9fff', mr: 3 }}>
                         {info.icon}
                       </Box>
                       <Box>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.8)', mb: 0.5 }}>
+                        <Typography variant="subtitle2" sx={{ color: '#4a4a68', mb: 0.5 }}>
                           {info.title}
                         </Typography>
                         {info.link ? (
@@ -237,7 +234,7 @@ const Contact = () => {
                             target={info.link.startsWith('http') ? '_blank' : undefined}
                             rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                             sx={{ 
-                              color: 'white', 
+                              color: '#1f1f2e', 
                               textDecoration: 'none',
                               '&:hover': { textDecoration: 'underline' }
                             }}
@@ -245,7 +242,7 @@ const Contact = () => {
                             {info.value}
                           </Typography>
                         ) : (
-                          <Typography sx={{ color: 'white' }}>
+                          <Typography sx={{ color: '#1f1f2e' }}>
                             {info.value}
                           </Typography>
                         )}
@@ -258,7 +255,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <Box>
-              <Typography variant="h6" sx={{ mb: 2, color: 'white' }}>
+              <Typography variant="h6" sx={{ mb: 2, color: '#1f1f2e' }}>
                 Follow Me
               </Typography>
               <Box sx={{ display: 'flex', gap: 2 }}>
@@ -268,11 +265,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
-                    color: '#00d4ff',
-                    borderColor: 'rgba(0, 212, 255, 0.3)',
+                    color: '#1f1f2e',
+                    borderColor: '#9f9fff',
                     '&:hover': {
-                      borderColor: '#00d4ff',
-                      backgroundColor: 'rgba(0, 212, 255, 0.1)'
+                      borderColor: '#7f7fff',
+                      backgroundColor: 'rgba(159, 159, 255, 0.1)'
                     }
                   }}
                   variant="outlined"
@@ -285,11 +282,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
-                    color: '#c77dff',
-                    borderColor: 'rgba(123, 44, 191, 0.3)',
+                    color: '#1f1f2e',
+                    borderColor: '#9f9fff',
                     '&:hover': {
-                      borderColor: '#c77dff',
-                      backgroundColor: 'rgba(123, 44, 191, 0.1)'
+                      borderColor: '#7f7fff',
+                      backgroundColor: 'rgba(159, 159, 255, 0.1)'
                     }
                   }}
                   variant="outlined"
@@ -305,14 +302,13 @@ const Contact = () => {
             <Card 
               className="contact-item"
               sx={{
-                background: 'rgba(0, 212, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(0, 212, 255, 0.2)',
+                background: '#ffffff',
+                boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
                 borderRadius: '16px'
               }}
             >
               <CardContent sx={{ p: 4 }}>
-                <Typography variant="h5" sx={{ fontWeight: 700, mb: 3, color: 'white' }}>
+                <Typography variant="h5" sx={{ fontWeight: 700, mb: 3, color: '#1f1f2e' }}>
                   Send Me a Message
                 </Typography>
                 
@@ -333,24 +329,24 @@ const Contact = () => {
                       required
                       slotProps={{
                         input: {
-                          startAdornment: <Person sx={{ color: 'rgba(255,255,255,0.7)', mr: 1 }} />
+                          startAdornment: <Person sx={{ color: '#4a4a68', mr: 1 }} />
                         }
                       }}
                       sx={{
                         '& .MuiOutlinedInput-root': {
-                          color: 'white',
+                          color: '#1f1f2e',
                           '& fieldset': {
-                            borderColor: 'rgba(255,255,255,0.3)'
+                            borderColor: 'rgba(31, 31, 46, 0.3)'
                           },
                           '&:hover fieldset': {
-                            borderColor: 'rgba(255,255,255,0.5)'
+                            borderColor: 'rgba(31, 31, 46, 0.5)'
                           },
                           '&.Mui-focused fieldset': {
-                            borderColor: 'white'
+                            borderColor: '#9f9fff'
                           }
                         },
                         '& .MuiInputLabel-root': {
-                          color: 'rgba(255,255,255,0.7)'
+                          color: '#4a4a68'
                         }
                       }}
                     />
@@ -364,24 +360,24 @@ const Contact = () => {
                       required
                       slotProps={{
                         input: {
-                          startAdornment: <Email sx={{ color: 'rgba(255,255,255,0.7)', mr: 1 }} />
+                          startAdornment: <Email sx={{ color: '#4a4a68', mr: 1 }} />
                         }
                       }}
                       sx={{
                         '& .MuiOutlinedInput-root': {
-                          color: 'white',
+                          color: '#1f1f2e',
                           '& fieldset': {
-                            borderColor: 'rgba(255,255,255,0.3)'
+                            borderColor: 'rgba(31, 31, 46, 0.3)'
                           },
                           '&:hover fieldset': {
-                            borderColor: 'rgba(255,255,255,0.5)'
+                            borderColor: 'rgba(31, 31, 46, 0.5)'
                           },
                           '&.Mui-focused fieldset': {
-                            borderColor: 'white'
+                            borderColor: '#9f9fff'
                           }
                         },
                         '& .MuiInputLabel-root': {
-                          color: 'rgba(255,255,255,0.7)'
+                          color: '#4a4a68'
                         }
                       }}
                     />
@@ -429,24 +425,24 @@ const Contact = () => {
                       required
                       slotProps={{
                         input: {
-                          startAdornment: <Message sx={{ color: 'rgba(255,255,255,0.7)', mr: 1, alignSelf: 'flex-start', mt: 1 }} />
+                          startAdornment: <Message sx={{ color: '#4a4a68', mr: 1, alignSelf: 'flex-start', mt: 1 }} />
                         }
                       }}
                       sx={{
                         '& .MuiOutlinedInput-root': {
-                          color: 'white',
+                          color: '#1f1f2e',
                           '& fieldset': {
-                            borderColor: 'rgba(255,255,255,0.3)'
+                            borderColor: 'rgba(31, 31, 46, 0.3)'
                           },
                           '&:hover fieldset': {
-                            borderColor: 'rgba(255,255,255,0.5)'
+                            borderColor: 'rgba(31, 31, 46, 0.5)'
                           },
                           '&.Mui-focused fieldset': {
-                            borderColor: 'white'
+                            borderColor: '#9f9fff'
                           }
                         },
                         '& .MuiInputLabel-root': {
-                          color: 'rgba(255,255,255,0.7)'
+                          color: '#4a4a68'
                         }
                       }}
                     />
@@ -460,16 +456,16 @@ const Contact = () => {
                     startIcon={<Send />}
                     disabled={loading}
                     sx={{
-                      backgroundColor: '#00d4ff',
-                      color: '#1a1a2e',
+                      backgroundColor: '#9f9fff',
+                      color: '#ffffff',
                       fontWeight: 'bold',
                       px: 4,
                       py: 1.5,
                       '&:hover': {
-                        backgroundColor: '#00b8e6'
+                        backgroundColor: '#7f7fff'
                       },
                       '&:disabled': {
-                        backgroundColor: 'rgba(0, 212, 255, 0.3)'
+                        backgroundColor: 'rgba(159, 159, 255, 0.3)'
                       }
                     }}
                   >
