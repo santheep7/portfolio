@@ -98,7 +98,7 @@ const Skills = () => {
       sx={{ 
         py: 10, 
         background: '#d3d3ff',
-        color: '#1f1f2e',
+        color: '#0f0f1a',
         position: 'relative'
       }} 
       ref={skillsRef}
@@ -111,10 +111,10 @@ const Skills = () => {
             sx={{ 
               mb: 2, 
               backgroundColor: '#ffffff', 
-              color: '#1f1f2e',
+              color: '#0f0f1a',
               fontWeight: 600,
               px: 2,
-              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
+              boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)'
             }} 
           />
           <Typography 
@@ -123,12 +123,12 @@ const Skills = () => {
             sx={{ 
               fontWeight: 800,
               mb: 2,
-              color: '#1f1f2e'
+              color: '#0f0f1a'
             }}
           >
             Technical Expertise
           </Typography>
-          <Typography variant="h6" sx={{ color: '#4a4a68', maxWidth: '600px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ color: '#2d2d45', maxWidth: '600px', mx: 'auto' }}>
             Proficient in modern web technologies with a focus on performance and scalability
           </Typography>
         </Box>
@@ -145,13 +145,13 @@ const Skills = () => {
                 className="skill-item"
                 sx={{ 
                   background: '#ffffff',
-                  boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                  boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                   borderRadius: '16px',
                   height: '100%',
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: '0 10px 30px rgba(31, 31, 46, 0.15)'
+                    boxShadow: '0 10px 30px rgba(15, 15, 26, 0.15)'
                   }
                 }}
               >
@@ -161,7 +161,7 @@ const Skills = () => {
                     sx={{ 
                       fontWeight: 700, 
                       mb: 3, 
-                      color: '#1f1f2e',
+                      color: '#0f0f1a',
                       textTransform: 'capitalize',
                       textAlign: 'center'
                     }}
@@ -179,10 +179,10 @@ const Skills = () => {
                             </Box>
                             <Box sx={{ flex: 1 }}>
                               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5 }}>
-                                <Typography variant="body1" sx={{ fontWeight: 600, color: '#1f1f2e' }}>
+                                <Typography variant="body1" sx={{ fontWeight: 600, color: '#0f0f1a' }}>
                                   {skill.name}
                                 </Typography>
-                                <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+                                <Typography variant="body2" sx={{ color: '#2d2d45' }}>
                                   {skill.level}%
                                 </Typography>
                               </Box>
@@ -193,7 +193,7 @@ const Skills = () => {
                                 sx={{
                                   height: 6,
                                   borderRadius: 3,
-                                  backgroundColor: 'rgba(31, 31, 46, 0.1)',
+                                  backgroundColor: 'rgba(15, 15, 26, 0.1)',
                                   '& .MuiLinearProgress-bar': {
                                     backgroundColor: skill.color,
                                     borderRadius: 3

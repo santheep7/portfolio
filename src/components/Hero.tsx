@@ -123,15 +123,15 @@ const Hero = () => {
           
           {/* Text Content */}
           <ScrollReveal direction="left" duration={1.2}>
-            <Box ref={textRef} sx={{ flex: 1, color: '#1f1f2e', overflow: 'visible' }}>
+            <Box ref={textRef} sx={{ flex: 1, color: '#0f0f1a', overflow: 'visible' }}>
               {/* Status Badge */}
               <Chip 
                 label="🎓 Fresh Graduate • Open to Opportunities" 
                 sx={{ 
                   mb: 3, 
                   backgroundColor: '#ffffff', 
-                  color: '#1f1f2e',
-                  boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                  color: '#0f0f1a',
+                  boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                   fontWeight: 600
                 }} 
               />
@@ -204,7 +204,7 @@ const Hero = () => {
                 component="h2" 
                 sx={{ 
                   mb: 3,
-                  color: '#1f1f2e',
+                  color: '#0f0f1a',
                   fontWeight: 600
                 }}
               >
@@ -215,7 +215,7 @@ const Hero = () => {
                 variant="h6" 
                 sx={{ 
                   mb: 4, 
-                  color: '#4a4a68',
+                  color: '#2d2d45',
                   maxWidth: '500px',
                   lineHeight: 1.6
                 }}
@@ -233,8 +233,8 @@ const Hero = () => {
                     size="medium"
                     sx={{
                       backgroundColor: '#ffffff',
-                      color: '#1f1f2e',
-                      boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                      color: '#0f0f1a',
+                      boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                       fontWeight: 600,
                       fontSize: '0.9rem',
                       px: 1,
@@ -242,7 +242,7 @@ const Hero = () => {
                       '&:hover': {
                         backgroundColor: '#ffffff',
                         transform: 'translateY(-2px)',
-                        boxShadow: '0 4px 12px rgba(31, 31, 46, 0.15)'
+                        boxShadow: '0 4px 12px rgba(15, 15, 26, 0.15)'
                       }
                     }}
                   />
@@ -259,15 +259,15 @@ const Hero = () => {
                   sx={{
                     px: 4,
                     py: 1.5,
-                    backgroundColor: '#9f9fff',
+                    backgroundColor: '#6b6bcc',
                     color: '#ffffff',
                     fontWeight: 'bold',
                     textTransform: 'none',
                     borderRadius: '50px',
                     '&:hover': {
-                      backgroundColor: '#7f7fff',
+                      backgroundColor: '#5555aa',
                       transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 20px rgba(159, 159, 255, 0.3)'
+                      boxShadow: '0 8px 20px rgba(107, 107, 204, 0.3)'
                     }
                   }}
                 >
@@ -286,16 +286,16 @@ const Hero = () => {
                   sx={{
                     px: 4,
                     py: 1.5,
-                    color: '#1f1f2e',
+                    color: '#0f0f1a',
                     fontWeight: 'bold',
                     textTransform: 'none',
                     borderRadius: '50px',
-                    border: '2px solid #9f9fff',
+                    border: '2px solid #6b6bcc',
                     backgroundColor: 'transparent',
                     '&:hover': {
-                      backgroundColor: 'rgba(159, 159, 255, 0.1)',
+                      backgroundColor: 'rgba(107, 107, 204, 0.1)',
                       transform: 'translateY(-2px)',
-                      borderColor: '#7f7fff'
+                      borderColor: '#5555aa'
                     }
                   }}
                 >
@@ -316,12 +316,12 @@ const Hero = () => {
                     p: 1.5,
                     borderRadius: '50%',
                     backgroundColor: '#ffffff',
-                    color: '#1f1f2e',
-                    boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                    color: '#0f0f1a',
+                    boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                     '&:hover': {
                       backgroundColor: '#ffffff',
                       transform: 'scale(1.1)',
-                      boxShadow: '0 4px 12px rgba(31, 31, 46, 0.15)'
+                      boxShadow: '0 4px 12px rgba(15, 15, 26, 0.15)'
                     }
                   }}
                 />
@@ -336,12 +336,12 @@ const Hero = () => {
                     p: 1.5,
                     borderRadius: '50%',
                     backgroundColor: '#ffffff',
-                    color: '#1f1f2e',
-                    boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                    color: '#0f0f1a',
+                    boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                     '&:hover': {
                       backgroundColor: '#ffffff',
                       transform: 'scale(1.1)',
-                      boxShadow: '0 4px 12px rgba(31, 31, 46, 0.15)'
+                      boxShadow: '0 4px 12px rgba(15, 15, 26, 0.15)'
                     }
                   }}
                 />
@@ -388,7 +388,7 @@ const Hero = () => {
                     borderRadius: '50%',
                     objectFit: 'cover',
                     border: '4px solid #ffffff',
-                    boxShadow: '0 10px 40px rgba(31, 31, 46, 0.15)',
+                    boxShadow: '0 10px 40px rgba(15, 15, 26, 0.15)',
                     position: 'relative',
                     zIndex: 1,
                     transition: 'transform 0.3s ease',

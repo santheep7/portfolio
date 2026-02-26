@@ -53,10 +53,10 @@ const Footer = () => {
       component="footer"
       sx={{
         background: '#ffffff',
-        color: '#1f1f2e',
+        color: '#0f0f1a',
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '0 -2px 8px rgba(31, 31, 46, 0.1)'
+        boxShadow: '0 -2px 8px rgba(15, 15, 26, 0.1)'
       }}
     >
       {/* Decorative Background Elements */}
@@ -98,12 +98,12 @@ const Footer = () => {
                 sx={{ 
                   fontWeight: 800, 
                   mb: 2,
-                  color: '#1f1f2e'
+                  color: '#0f0f1a'
                 }}
               >
                 Santheep Krishna V G
               </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: '#4a4a68', lineHeight: 1.6 }}>
+              <Typography variant="body2" sx={{ mb: 3, color: '#2d2d45', lineHeight: 1.6 }}>
                 Full Stack MERN Developer passionate about creating innovative web solutions. 
                 Always eager to learn new technologies and take on challenging projects.
               </Typography>
@@ -111,20 +111,20 @@ const Footer = () => {
               {/* Contact Info */}
               <Box sx={{ mb: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <LocationOn sx={{ fontSize: 16, mr: 1, color: '#4a4a68' }} />
-                  <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+                  <LocationOn sx={{ fontSize: 16, mr: 1, color: '#2d2d45' }} />
+                  <Typography variant="body2" sx={{ color: '#2d2d45' }}>
                     Kerala, India
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <Phone sx={{ fontSize: 16, mr: 1, color: '#4a4a68' }} />
-                  <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+                  <Phone sx={{ fontSize: 16, mr: 1, color: '#2d2d45' }} />
+                  <Typography variant="body2" sx={{ color: '#2d2d45' }}>
                     +91 8075738744
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Email sx={{ fontSize: 16, mr: 1, color: '#4a4a68' }} />
-                  <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+                  <Email sx={{ fontSize: 16, mr: 1, color: '#2d2d45' }} />
+                  <Typography variant="body2" sx={{ color: '#2d2d45' }}>
                     santheepkrishna@gmail.com
                   </Typography>
                 </Box>
@@ -133,7 +133,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#1f1f2e' }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#0f0f1a' }}>
                 Quick Links
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -143,13 +143,13 @@ const Footer = () => {
                     href={link.href}
                     sx={{
                       justifyContent: 'flex-start',
-                      color: '#4a4a68',
+                      color: '#2d2d45',
                       textTransform: 'none',
                       p: 1,
                       borderRadius: '8px',
                       '&:hover': {
-                        backgroundColor: 'rgba(159, 159, 255, 0.1)',
-                        color: '#1f1f2e',
+                        backgroundColor: 'rgba(107, 107, 204, 0.1)',
+                        color: '#0f0f1a',
                         transform: 'translateX(8px)'
                       },
                       transition: 'all 0.3s ease'
@@ -163,7 +163,7 @@ const Footer = () => {
 
             {/* Social Links & Newsletter */}
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#1f1f2e' }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#0f0f1a' }}>
                 Connect With Me
               </Typography>
               
@@ -181,12 +181,12 @@ const Footer = () => {
                       height: 48,
                       borderRadius: '50%',
                       backgroundColor: '#ffffff',
-                      color: '#1f1f2e',
-                      boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                      color: '#0f0f1a',
+                      boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                       '&:hover': {
                         backgroundColor: '#ffffff',
                         transform: 'translateY(-4px) scale(1.1)',
-                        boxShadow: '0 4px 12px rgba(31, 31, 46, 0.15)'
+                        boxShadow: '0 4px 12px rgba(15, 15, 26, 0.15)'
                       },
                       transition: 'all 0.3s ease'
                     }}
@@ -201,15 +201,15 @@ const Footer = () => {
                 onClick={scrollToTop}
                 startIcon={<KeyboardArrowUp />}
                 sx={{
-                  backgroundColor: '#9f9fff',
+                  backgroundColor: '#6b6bcc',
                   color: '#ffffff',
                   borderRadius: '25px',
                   px: 3,
                   py: 1,
                   '&:hover': {
-                    backgroundColor: '#7f7fff',
+                    backgroundColor: '#5555aa',
                     transform: 'translateY(-2px)',
-                    boxShadow: '0 4px 12px rgba(159, 159, 255, 0.3)'
+                    boxShadow: '0 4px 12px rgba(107, 107, 204, 0.3)'
                   },
                   transition: 'all 0.3s ease'
                 }}
@@ -220,7 +220,7 @@ const Footer = () => {
           </Box>
         </Box>
 
-        <Divider sx={{ borderColor: 'rgba(31, 31, 46, 0.1)' }} />
+        <Divider sx={{ borderColor: 'rgba(15, 15, 26, 0.1)' }} />
 
         {/* Bottom Footer */}
         <Box 
@@ -233,16 +233,16 @@ const Footer = () => {
             gap: 2
           }}
         >
-          <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+          <Typography variant="body2" sx={{ color: '#2d2d45' }}>
             © {new Date().getFullYear()} Santheep Krishna V G. All rights reserved.
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+            <Typography variant="body2" sx={{ color: '#2d2d45' }}>
               Made with
             </Typography>
             <Favorite sx={{ color: '#ff4757', fontSize: 16 }} />
-            <Typography variant="body2" sx={{ color: '#4a4a68' }}>
+            <Typography variant="body2" sx={{ color: '#2d2d45' }}>
               using Next.js & Material-UI
             </Typography>
           </Box>

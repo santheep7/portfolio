@@ -22,7 +22,7 @@ const Header = () => {
   const drawer = (
     <Box sx={{ width: 250, pt: 2, background: '#ffffff', height: '100%' }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, pb: 2 }}>
-        <IconButton onClick={handleDrawerToggle} sx={{ color: '#1f1f2e' }}>
+        <IconButton onClick={handleDrawerToggle} sx={{ color: '#0f0f1a' }}>
           <CloseIcon />
         </IconButton>
       </Box>
@@ -34,9 +34,9 @@ const Header = () => {
             href={item.href} 
             onClick={handleDrawerToggle}
             sx={{ 
-              color: '#1f1f2e',
+              color: '#0f0f1a',
               '&:hover': {
-                backgroundColor: 'rgba(159, 159, 255, 0.1)'
+                backgroundColor: 'rgba(107, 107, 204, 0.1)'
               }
             }}
           >
@@ -53,12 +53,12 @@ const Header = () => {
         position="fixed" 
         sx={{ 
           background: '#ffffff',
-          boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
-          color: '#1f1f2e'
+          boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
+          color: '#0f0f1a'
         }}
       >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700, color: '#1f1f2e' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700, color: '#0f0f1a' }}>
             Santheep Krishna V G
           </Typography>
           
@@ -69,12 +69,12 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 sx={{
-                  color: '#1f1f2e',
+                  color: '#0f0f1a',
                   textTransform: 'none',
                   fontWeight: 500,
                   '&:hover': {
-                    backgroundColor: 'rgba(159, 159, 255, 0.1)',
-                    color: '#9f9fff'
+                    backgroundColor: 'rgba(107, 107, 204, 0.1)',
+                    color: '#6b6bcc'
                   }
                 }}
               >

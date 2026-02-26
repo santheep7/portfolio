@@ -43,12 +43,12 @@ const Projects = () => {
             sx={{ 
               mb: 3, 
               backgroundColor: '#ffffff',
-              color: '#1f1f2e',
+              color: '#0f0f1a',
               fontWeight: 600,
               px: 3,
               py: 1,
               fontSize: '0.9rem',
-              boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)'
+              boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)'
             }} 
           />
           <Typography 
@@ -56,7 +56,7 @@ const Projects = () => {
             component="h2" 
             sx={{ 
               fontWeight: 800,
-              color: '#1f1f2e',
+              color: '#0f0f1a',
               mb: 3,
               fontSize: { xs: '2.5rem', md: '3.5rem' }
             }}
@@ -66,7 +66,7 @@ const Projects = () => {
           <Typography 
             variant="h6" 
             sx={{ 
-              color: '#4a4a68', 
+              color: '#2d2d45', 
               maxWidth: '600px', 
               mx: 'auto',
               lineHeight: 1.6
@@ -101,7 +101,7 @@ const Projects = () => {
                       position: 'absolute',
                       inset: 0,
                       background: '#ffffff',
-                      boxShadow: '0 2px 8px rgba(31, 31, 46, 0.1)',
+                      boxShadow: '0 2px 8px rgba(15, 15, 26, 0.1)',
                       borderRadius: '16px'
                     }}
                   />
@@ -116,7 +116,7 @@ const Projects = () => {
                         overflow: 'hidden',
                         borderRadius: '12px',
                         background: 'rgba(211, 211, 255, 0.1)',
-                        border: '1px solid rgba(31, 31, 46, 0.1)'
+                        border: '1px solid rgba(15, 15, 26, 0.1)'
                       }}>
                         <Image
                           src={project.image}
@@ -138,11 +138,11 @@ const Projects = () => {
                             position: 'absolute',
                             top: 12,
                             right: 12,
-                            background: '#9f9fff',
+                            background: '#6b6bcc',
                             borderRadius: '8px',
                             px: 2,
                             py: 0.5,
-                            boxShadow: '0 4px 15px rgba(159, 159, 255, 0.3)'
+                            boxShadow: '0 4px 15px rgba(107, 107, 204, 0.3)'
                           }}
                         >
                           <Typography variant="caption" sx={{ 
@@ -167,7 +167,7 @@ const Projects = () => {
                         variant="h6" 
                         sx={{ 
                           fontWeight: 700, 
-                          color: '#1f1f2e',
+                          color: '#0f0f1a',
                           fontSize: '1.25rem'
                         }}
                       >
@@ -183,7 +183,7 @@ const Projects = () => {
                       <Typography 
                         variant="body2" 
                         sx={{ 
-                          color: '#4a4a68', 
+                          color: '#2d2d45', 
                           lineHeight: 1.6,
                           fontSize: '0.85rem'
                         }}
@@ -194,7 +194,7 @@ const Projects = () => {
 
                     {/* Technologies */}
                     <CardItem translateZ="70" className="mb-4">
-                      <Typography variant="subtitle2" sx={{ color: '#1f1f2e', mb: 1, fontWeight: 600, fontSize: '0.75rem' }}>
+                      <Typography variant="subtitle2" sx={{ color: '#0f0f1a', mb: 1, fontWeight: 600, fontSize: '0.75rem' }}>
                         Tech Stack
                       </Typography>
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
@@ -239,8 +239,8 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           fullWidth
                           sx={{
-                            borderColor: '#9f9fff',
-                            color: '#1f1f2e',
+                            borderColor: '#6b6bcc',
+                            color: '#0f0f1a',
                             fontWeight: 600,
                             borderRadius: '10px',
                             py: 1,
@@ -248,10 +248,10 @@ const Projects = () => {
                             textTransform: 'none',
                             transition: 'all 0.3s ease',
                             '&:hover': {
-                              borderColor: '#7f7fff',
-                              backgroundColor: 'rgba(159, 159, 255, 0.1)',
+                              borderColor: '#5555aa',
+                              backgroundColor: 'rgba(107, 107, 204, 0.1)',
                               transform: 'translateY(-2px)',
-                              boxShadow: '0 8px 20px rgba(159, 159, 255, 0.3)'
+                              boxShadow: '0 8px 20px rgba(107, 107, 204, 0.3)'
                             }
                           }}
                         >
@@ -272,19 +272,19 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           fullWidth
                           sx={{
-                            background: '#9f9fff',
+                            background: '#6b6bcc',
                             color: '#ffffff',
                             fontWeight: 600,
                             borderRadius: '10px',
                             py: 1,
                             fontSize: '0.75rem',
                             textTransform: 'none',
-                            boxShadow: '0 4px 15px rgba(159, 159, 255, 0.3)',
+                            boxShadow: '0 4px 15px rgba(107, 107, 204, 0.3)',
                             transition: 'all 0.3s ease',
                             '&:hover': {
-                              background: '#7f7fff',
+                              background: '#5555aa',
                               transform: 'translateY(-2px)',
-                              boxShadow: '0 8px 25px rgba(159, 159, 255, 0.4)'
+                              boxShadow: '0 8px 25px rgba(107, 107, 204, 0.4)'
                             }
                           }}
                         >
@@ -300,7 +300,7 @@ const Projects = () => {
 
         {/* Call to Action */}
         <Box sx={{ textAlign: 'center', mt: 12 }}>
-          <Typography variant="h6" sx={{ mb: 3, color: '#1f1f2e' }}>
+          <Typography variant="h6" sx={{ mb: 3, color: '#0f0f1a' }}>
             Want to see more of my work?
           </Typography>
           <Button
@@ -311,8 +311,8 @@ const Projects = () => {
             rel="noopener noreferrer"
             size="large"
             sx={{
-              borderColor: '#9f9fff',
-              color: '#1f1f2e',
+              borderColor: '#6b6bcc',
+              color: '#0f0f1a',
               px: 4,
               py: 1.5,
               fontSize: '1rem',
@@ -328,14 +328,14 @@ const Projects = () => {
                 left: '-100%',
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(90deg, transparent, rgba(159, 159, 255, 0.1), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(107, 107, 204, 0.1), transparent)',
                 transition: 'left 0.6s ease'
               },
               '&:hover': {
-                borderColor: '#7f7fff',
-                backgroundColor: 'rgba(159, 159, 255, 0.1)',
+                borderColor: '#5555aa',
+                backgroundColor: 'rgba(107, 107, 204, 0.1)',
                 transform: 'translateY(-3px)',
-                boxShadow: '0 15px 35px rgba(159, 159, 255, 0.3)',
+                boxShadow: '0 15px 35px rgba(107, 107, 204, 0.3)',
                 '&::before': {
                   left: '100%'
                 }
